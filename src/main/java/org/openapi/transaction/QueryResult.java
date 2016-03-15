@@ -1,0 +1,88 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.openapi.transaction;
+
+/**
+ *
+ * @author heungjae
+ */
+public class QueryResult {
+    int totalCnt;
+    int count;
+    int page;
+
+    public QueryResult() {
+    }
+
+    public QueryResult(int totalCnt, int count, int page) {
+        this.totalCnt = totalCnt;
+        this.count = count;
+        this.page = page;
+    }
+
+    public int getTotalCnt() {
+        return totalCnt;
+    }
+
+    public void setTotalCnt(int totalCnt) {
+        this.totalCnt = totalCnt;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + this.totalCnt;
+        hash = 37 * hash + this.count;
+        hash = 37 * hash + this.page;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final QueryResult other = (QueryResult) obj;
+        if (this.totalCnt != other.totalCnt) {
+            return false;
+        }
+        if (this.count != other.count) {
+            return false;
+        }
+        if (this.page != other.page) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "QueryResult{" + "totalCnt=" + totalCnt + ", count=" + count + ", page=" + page + '}';
+    }
+    
+}
