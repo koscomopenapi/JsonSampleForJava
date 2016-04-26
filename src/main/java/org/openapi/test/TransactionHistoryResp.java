@@ -86,10 +86,10 @@ public class TransactionHistoryResp {
         transactionHistoryResponse.setBody(transactionHistoryResponseBody);
         transactionHistoryResponse.setTransList(transactionList);
 
-        TransactionHistoryResponseBox TransactionHistoryResponseBox = new TransactionHistoryResponseBox(transactionHistoryResponse);
+        TransactionHistoryResponseBox transactionHistoryResponseBox = new TransactionHistoryResponseBox(transactionHistoryResponse);
 
         Gson gson = new Gson();
-        String response = gson.toJson(TransactionHistoryResponseBox);
+        String response = gson.toJson(transactionHistoryResponseBox);
         System.out.println(response);
         System.out.println("Total Length = [" + response.length() + "]");
     }

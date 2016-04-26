@@ -16,5 +16,11 @@ public class BalanceRequestBox {
     public BalanceRequestBox(BalanceRequest accountBalanceRequest) {
         this.balanceRequest = accountBalanceRequest;
     }
+
+    public BalanceRequest getBalanceRequest() {
+        return balanceRequest;
+    }
+    
+    
     
 }

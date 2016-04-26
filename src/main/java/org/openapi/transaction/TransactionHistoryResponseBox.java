@@ -10,10 +10,10 @@ package org.openapi.transaction;
  * @author heungjae
  */
 public class TransactionHistoryResponseBox {
-    TransactionHistoryResponse TransactionHistoryResponse;
+    TransactionHistoryResponse transactionHistoryResponse;
 
     public TransactionHistoryResponseBox(TransactionHistoryResponse TransactionHistoryResponse) {
-        this.TransactionHistoryResponse = TransactionHistoryResponse;
+        this.transactionHistoryResponse = TransactionHistoryResponse;
     }
     
     
