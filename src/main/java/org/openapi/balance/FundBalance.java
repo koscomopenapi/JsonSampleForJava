@@ -14,7 +14,7 @@ import org.openapi.portfolio.asset.Fund;
  */
 public class FundBalance extends Fund {
     double valAtTrade;
-    double valatCur;
+    double valAtCur;
     double proLoss;
     String firstDateBuy;
     String lastDateBuy;
@@ -22,18 +22,18 @@ public class FundBalance extends Fund {
     public FundBalance() {
     }
 
-    public FundBalance(double valAtTrade, double valatCur, double proLoss, String firstDateBuy, String lastDateBuy) {
+    public FundBalance(double valAtTrade, double valAtCur, double proLoss, String firstDateBuy, String lastDateBuy) {
         this.valAtTrade = valAtTrade;
-        this.valatCur = valatCur;
+        this.valAtCur = valAtCur;
         this.proLoss = proLoss;
         this.firstDateBuy = firstDateBuy;
         this.lastDateBuy = lastDateBuy;
     }
 
-    public FundBalance(double valAtTrade, double valatCur, double proLoss, String firstDateBuy, String lastDateBuy, String fundCode, String fundName, double qty, double earningRate, String maturity) {
+    public FundBalance(double valAtTrade, double valAtCur, double proLoss, String firstDateBuy, String lastDateBuy, String fundCode, String fundName, double qty, double earningRate, String maturity) {
         super(fundCode, fundName, qty, earningRate, maturity);
         this.valAtTrade = valAtTrade;
-        this.valatCur = valatCur;
+        this.valAtCur = valAtCur;
         this.proLoss = proLoss;
         this.firstDateBuy = firstDateBuy;
         this.lastDateBuy = lastDateBuy;
@@ -47,12 +47,12 @@ public class FundBalance extends Fund {
         this.valAtTrade = valAtTrade;
     }
 
-    public double getValatCur() {
-        return valatCur;
+    public double getValAtCur() {
+        return valAtCur;
     }
 
-    public void setValatCur(double valatCur) {
-        this.valatCur = valatCur;
+    public void setValAtCur(double valAtCur) {
+        this.valAtCur = valAtCur;
     }
 
     public double getProLoss() {
@@ -83,7 +83,7 @@ public class FundBalance extends Fund {
     public int hashCode() {
         int hash = 7;
         hash = 89 * hash + (int) (Double.doubleToLongBits(this.valAtTrade) ^ (Double.doubleToLongBits(this.valAtTrade) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.valatCur) ^ (Double.doubleToLongBits(this.valatCur) >>> 32));
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.valAtCur) ^ (Double.doubleToLongBits(this.valAtCur) >>> 32));
         hash = 89 * hash + (int) (Double.doubleToLongBits(this.proLoss) ^ (Double.doubleToLongBits(this.proLoss) >>> 32));
         hash = 89 * hash + Objects.hashCode(this.firstDateBuy);
         hash = 89 * hash + Objects.hashCode(this.lastDateBuy);
@@ -105,7 +105,7 @@ public class FundBalance extends Fund {
         if (Double.doubleToLongBits(this.valAtTrade) != Double.doubleToLongBits(other.valAtTrade)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.valatCur) != Double.doubleToLongBits(other.valatCur)) {
+        if (Double.doubleToLongBits(this.valAtCur) != Double.doubleToLongBits(other.valAtCur)) {
             return false;
         }
         if (Double.doubleToLongBits(this.proLoss) != Double.doubleToLongBits(other.proLoss)) {
@@ -122,7 +122,7 @@ public class FundBalance extends Fund {
 
     @Override
     public String toString() {
-        return "FundBalance{" + "valAtTrade=" + valAtTrade + ", valatCur=" + valatCur + ", proLoss=" + proLoss + ", firstDateBuy=" + firstDateBuy + ", lastDateBuy=" + lastDateBuy + '}';
+        return "FundBalance{" + "valAtTrade=" + valAtTrade + ", valatCur=" + valAtCur + ", proLoss=" + proLoss + ", firstDateBuy=" + firstDateBuy + ", lastDateBuy=" + lastDateBuy + '}';
     }
     
     
