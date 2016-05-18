@@ -1,5 +1,5 @@
 
-메시지 표준 V1.0 반영 class
+메시지 표준 V1.0 반영 class (2016.05.18)
 
 
 # JsonSampleForJava
