@@ -1,3 +1,7 @@
+
+메시지 표준 V1.0 반영 class
+
+
 # JsonSampleForJava
 OpenAPI 요청/응답 클래스와 JSON sample code
 
