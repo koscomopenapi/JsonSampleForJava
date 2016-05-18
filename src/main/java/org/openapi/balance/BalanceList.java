@@ -3,33 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.openapi.portfolio;
+package org.openapi.balance;
 
+import java.util.ArrayList;
 import java.util.Objects;
-import org.openapi.transaction.QueryResult;
 
 /**
  *
  * @author heungjae
  */
-public class PortfolioResponseBody extends PortfolioRequestBody {
-    QueryResult queryResult;
+public class BalanceList {
+    
+    ArrayList <Object> balance = new ArrayList();
 
-    public PortfolioResponseBody() {
+    public BalanceList() {
     }
 
-    public QueryResult getQueryResult() {
-        return queryResult;
+    public ArrayList<Object> getBalance() {
+        return balance;
     }
 
-    public void setQueryResult(QueryResult queryResult) {
-        this.queryResult = queryResult;
+    public void setBalance(ArrayList<Object> balance) {
+        this.balance = balance;
     }
+    
+     public void addBalance(Object objet) {
+        balance.add(objet);
+    } 
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.queryResult);
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.balance);
         return hash;
     }
 
@@ -44,8 +49,8 @@ public class PortfolioResponseBody extends PortfolioRequestBody {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final PortfolioResponseBody other = (PortfolioResponseBody) obj;
-        if (!Objects.equals(this.queryResult, other.queryResult)) {
+        final BalanceList other = (BalanceList) obj;
+        if (!Objects.equals(this.balance, other.balance)) {
             return false;
         }
         return true;
@@ -53,7 +58,8 @@ public class PortfolioResponseBody extends PortfolioRequestBody {
 
     @Override
     public String toString() {
-        return "portfolioResponseBody{" + "queryResult=" + queryResult + '}';
+        return "BalanceList{" + "balance=" + balance + '}';
     }
     
+ 
 }

@@ -8,7 +8,6 @@ package org.openapi.test;
 import com.google.gson.Gson;
 import org.openapi.account.VirtualAccountAck;
 import org.openapi.account.VirtualAccountResponse;
-import org.openapi.account.VirtualAccountResponseBox;
 import org.openapi.account.VirtualAccountResponseList;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.Response;
@@ -58,10 +57,8 @@ public class VirtualAccountResp {
         virtualAccountResponse.setBody(virtualAccountResponseList);
         virtualAccountResponse.setResp(resp);
 
-        VirtualAccountResponseBox virtualAccountResponseBox = new VirtualAccountResponseBox(virtualAccountResponse);
-
         Gson gson = new Gson();
-        String response = gson.toJson(virtualAccountResponseBox);
+        String response = gson.toJson(virtualAccountResponse);
         System.out.println(response);
         System.out.println("Total Length = [" + response.length() + "]");
     }

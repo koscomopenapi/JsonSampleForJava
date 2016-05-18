@@ -13,7 +13,6 @@ import org.openapi.common.Partner;
 import org.openapi.transaction.QueryParameter;
 import org.openapi.transaction.TransactionHistoryRequest;
 import org.openapi.transaction.TransactionHistoryRequestBody;
-import org.openapi.transaction.TransactionHistoryRequestBox;
 
 /**
  *
@@ -63,10 +62,8 @@ public class TransactionHistoryReq {
         TransactionHistoryRequest.setAccInfo(accInfo);
         TransactionHistoryRequest.setBody(transactionHistoryRequestBody);
 
-        TransactionHistoryRequestBox transactionHistoryRequestBox = new TransactionHistoryRequestBox(TransactionHistoryRequest);
-
         Gson gson = new Gson();
-        String request = gson.toJson(transactionHistoryRequestBox);
+        String request = gson.toJson(TransactionHistoryRequest);
         System.out.println(request);
         System.out.println("Total Length = [" + request.length() + "]");
     }

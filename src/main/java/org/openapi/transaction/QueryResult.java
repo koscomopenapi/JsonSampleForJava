@@ -5,6 +5,8 @@
  */
 package org.openapi.transaction;
 
+import java.util.Objects;
+
 /**
  *
  * @author heungjae
@@ -12,12 +14,12 @@ package org.openapi.transaction;
 public class QueryResult {
     int totalCnt;
     int count;
-    int page;
+    String page;
 
     public QueryResult() {
     }
 
-    public QueryResult(int totalCnt, int count, int page) {
+    public QueryResult(int totalCnt, int count, String page) {
         this.totalCnt = totalCnt;
         this.count = count;
         this.page = page;
@@ -39,20 +41,20 @@ public class QueryResult {
         this.count = count;
     }
 
-    public int getPage() {
+    public String getPage() {
         return page;
     }
 
-    public void setPage(int page) {
+    public void setPage(String page) {
         this.page = page;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + this.totalCnt;
-        hash = 37 * hash + this.count;
-        hash = 37 * hash + this.page;
+        int hash = 7;
+        hash = 29 * hash + this.totalCnt;
+        hash = 29 * hash + this.count;
+        hash = 29 * hash + Objects.hashCode(this.page);
         return hash;
     }
 
@@ -74,7 +76,7 @@ public class QueryResult {
         if (this.count != other.count) {
             return false;
         }
-        if (this.page != other.page) {
+        if (!Objects.equals(this.page, other.page)) {
             return false;
         }
         return true;
@@ -84,5 +86,6 @@ public class QueryResult {
     public String toString() {
         return "QueryResult{" + "totalCnt=" + totalCnt + ", count=" + count + ", page=" + page + '}';
     }
-    
+
+
 }

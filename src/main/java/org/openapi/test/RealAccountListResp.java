@@ -9,7 +9,6 @@ import com.google.gson.Gson;
 import org.openapi.account.AccountList;
 import org.openapi.account.Account;
 import org.openapi.account.RealAccountListResponse;
-import org.openapi.account.RealAccountListResponseBox;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.Response;
 
@@ -55,10 +54,8 @@ public class RealAccountListResp {
         realAccountListResponse.setAccList(accList);
         realAccountListResponse.setResp(resp);
 
-        RealAccountListResponseBox realAccountListResponseBox = new RealAccountListResponseBox(realAccountListResponse);
-
         Gson gson = new Gson();
-        String response = gson.toJson(realAccountListResponseBox);
+        String response = gson.toJson(realAccountListResponse);
         System.out.println(response);
         System.out.println("Total Length = [" + response.length() + "]");
     }

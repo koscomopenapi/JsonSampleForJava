@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.openapi.portfolio;
+package org.openapi.balance;
 
 import java.util.Objects;
 import org.openapi.transaction.QueryResult;
@@ -12,10 +12,10 @@ import org.openapi.transaction.QueryResult;
  *
  * @author heungjae
  */
-public class PortfolioResponseBody extends PortfolioRequestBody {
+public class BalanceResponseBody extends PortfolioRequestBody {
     QueryResult queryResult;
 
-    public PortfolioResponseBody() {
+    public BalanceResponseBody() {
     }
 
     public QueryResult getQueryResult() {
@@ -29,7 +29,7 @@ public class PortfolioResponseBody extends PortfolioRequestBody {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.queryResult);
+        hash = 31 * hash + Objects.hashCode(this.queryResult);
         return hash;
     }
 
@@ -44,7 +44,7 @@ public class PortfolioResponseBody extends PortfolioRequestBody {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final PortfolioResponseBody other = (PortfolioResponseBody) obj;
+        final BalanceResponseBody other = (BalanceResponseBody) obj;
         if (!Objects.equals(this.queryResult, other.queryResult)) {
             return false;
         }
@@ -53,7 +53,8 @@ public class PortfolioResponseBody extends PortfolioRequestBody {
 
     @Override
     public String toString() {
-        return "portfolioResponseBody{" + "queryResult=" + queryResult + '}';
+        return "BalanceResponseBody{" + "queryResult=" + queryResult + '}';
     }
+    
     
 }

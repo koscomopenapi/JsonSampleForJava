@@ -7,7 +7,6 @@ package org.openapi.test;
 
 import com.google.gson.Gson;
 import org.openapi.account.RealAccountListRequest;
-import org.openapi.account.RealAccountListRequestBox;
 import org.openapi.common.CommonHeader;
 
 /**
@@ -32,9 +31,8 @@ public class RealAccountListReq {
         commonHeader.setCi("834f889833602f174a706138f19778a2dc6eee0f834f889833602f174a706138f19778a2dc6eee0feee0f22");
 
         RealAccountListRequest realAccountListRequest = new RealAccountListRequest(commonHeader);
-        RealAccountListRequestBox realAccountListRequestBox = new RealAccountListRequestBox(realAccountListRequest);
         Gson gson = new Gson();
-        String request = gson.toJson(realAccountListRequestBox);
+        String request = gson.toJson(realAccountListRequest);
         System.out.println(request);
         System.out.println("Total Length = [" + request.length() + "]");
 

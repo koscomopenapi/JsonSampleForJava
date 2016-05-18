@@ -14,14 +14,10 @@ import java.util.Objects;
 public class QueryType {
     String assetType;
     String rspType;
-    
+    int count;
+    String page;
 
     public QueryType() {
-    }
-
-    public QueryType(String assetType, String rspType) {
-        this.assetType = assetType;
-        this.rspType = rspType;
     }
 
     public String getAssetType() {
@@ -40,11 +36,29 @@ public class QueryType {
         this.rspType = rspType;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public String getPage() {
+        return page;
+    }
+
+    public void setPage(String page) {
+        this.page = page;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.assetType);
-        hash = 97 * hash + Objects.hashCode(this.rspType);
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.assetType);
+        hash = 67 * hash + Objects.hashCode(this.rspType);
+        hash = 67 * hash + this.count;
+        hash = 67 * hash + Objects.hashCode(this.page);
         return hash;
     }
 
@@ -60,21 +74,27 @@ public class QueryType {
             return false;
         }
         final QueryType other = (QueryType) obj;
+        if (this.count != other.count) {
+            return false;
+        }
         if (!Objects.equals(this.assetType, other.assetType)) {
             return false;
         }
         if (!Objects.equals(this.rspType, other.rspType)) {
             return false;
         }
+        if (!Objects.equals(this.page, other.page)) {
+            return false;
+        }
         return true;
     }
 
+    
+    
     @Override
     public String toString() {
-        return "QueryType{" + "assetType=" + assetType + ", rspType=" + rspType + '}';
+        return "QueryType{" + "assetType=" + assetType + ", rspType=" + rspType + ", count=" + count + ", page=" + page + '}';
     }
-
-
     
-    
+
 }

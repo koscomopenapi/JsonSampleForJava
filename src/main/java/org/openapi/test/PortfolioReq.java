@@ -12,7 +12,6 @@ import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
 import org.openapi.portfolio.PortfolioRequest;
 import org.openapi.portfolio.PortfolioRequestBody;
-import org.openapi.portfolio.PortfolioRequestBox;
 import org.openapi.portfolio.QueryType;
 
 /**
@@ -59,9 +58,8 @@ public class PortfolioReq {
         portfolioRequest.setDevInfo(devInfo);
         portfolioRequest.setPortfolioRequestBody(portfolioRequestBody);
         
-        PortfolioRequestBox portfolioRequestBox = new PortfolioRequestBox(portfolioRequest);
         Gson gson = new Gson();
-        String request = gson.toJson(portfolioRequestBox);
+        String request = gson.toJson(portfolioRequest);
         System.out.println(request);
         System.out.println("Total Length = [" + request.length() + "]");
     }

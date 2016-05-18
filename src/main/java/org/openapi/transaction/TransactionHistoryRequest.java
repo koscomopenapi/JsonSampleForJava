@@ -22,7 +22,7 @@ public class TransactionHistoryRequest {
     DevInfo devInfo;
     AccInfo accInfo;
     TransactionHistoryRequestBody transactionHistoryRequestBody;
-
+    
     public TransactionHistoryRequest() {
     }
 

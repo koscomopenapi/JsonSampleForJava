@@ -7,12 +7,11 @@ package org.openapi.test;
 
 import com.google.gson.Gson;
 import org.openapi.balance.BalanceRequest;
-import org.openapi.balance.BalanceRequestBox;
+import org.openapi.balance.PortfolioRequestBody;
 import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
-import org.openapi.portfolio.PortfolioRequestBody;
 import org.openapi.portfolio.QueryType;
 
 /**
@@ -60,10 +59,8 @@ public class AccountBalanceReq {
         accountBalanceRequest.setDevInfo(devInfo);
         accountBalanceRequest.setPortfolioRequestBody(portfolioRequestBody);
 
-        BalanceRequestBox accountBalanceRequestBox = new BalanceRequestBox(accountBalanceRequest);
-
         Gson gson = new Gson();
-        String request = gson.toJson(accountBalanceRequestBox);
+        String request = gson.toJson(accountBalanceRequest);
         System.out.println(request);
         System.out.println("Total Length = [" + request.length() + "]");
     }

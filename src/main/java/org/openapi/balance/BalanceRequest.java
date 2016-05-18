@@ -9,7 +9,7 @@ import java.util.Objects;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
-import org.openapi.portfolio.PortfolioRequestBody;
+
 
 /**
  *
@@ -19,16 +19,16 @@ public class BalanceRequest {
     Partner partner;
     CommonHeader commonHeader;
     DevInfo DevInfo;
-    PortfolioRequestBody portfolioRequestBody;
+    PortfolioRequestBody balanceRequestBody;
 
     public BalanceRequest() {
     }
 
-    public BalanceRequest(Partner partner, CommonHeader commonHeader, DevInfo DevInfo, PortfolioRequestBody portfolioRequestBody) {
+    public BalanceRequest(Partner partner, CommonHeader commonHeader, DevInfo DevInfo, PortfolioRequestBody balanceRequestBody) {
         this.partner = partner;
         this.commonHeader = commonHeader;
         this.DevInfo = DevInfo;
-        this.portfolioRequestBody = portfolioRequestBody;
+        this.balanceRequestBody = balanceRequestBody;
     }
 
     public Partner getPartner() {
@@ -56,11 +56,11 @@ public class BalanceRequest {
     }
 
     public PortfolioRequestBody getPortfolioRequestBody() {
-        return portfolioRequestBody;
+        return balanceRequestBody;
     }
 
     public void setPortfolioRequestBody(PortfolioRequestBody portfolioRequestBody) {
-        this.portfolioRequestBody = portfolioRequestBody;
+        this.balanceRequestBody = portfolioRequestBody;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class BalanceRequest {
         hash = 19 * hash + Objects.hashCode(this.partner);
         hash = 19 * hash + Objects.hashCode(this.commonHeader);
         hash = 19 * hash + Objects.hashCode(this.DevInfo);
-        hash = 19 * hash + Objects.hashCode(this.portfolioRequestBody);
+        hash = 19 * hash + Objects.hashCode(this.balanceRequestBody);
         return hash;
     }
 
@@ -94,15 +94,12 @@ public class BalanceRequest {
         if (!Objects.equals(this.DevInfo, other.DevInfo)) {
             return false;
         }
-        if (!Objects.equals(this.portfolioRequestBody, other.portfolioRequestBody)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.balanceRequestBody, other.balanceRequestBody);
     }
 
     @Override
     public String toString() {
-        return "BalanceRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", DevInfo=" + DevInfo + ", portfolioRequestBody=" + portfolioRequestBody + '}';
+        return "BalanceRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", DevInfo=" + DevInfo + ", balanceRequestBody=" + balanceRequestBody + '}';
     }
     
     

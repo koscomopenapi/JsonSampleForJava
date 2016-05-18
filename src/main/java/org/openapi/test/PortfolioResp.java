@@ -10,14 +10,13 @@ import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.Response;
 import org.openapi.portfolio.PortfolioResponse;
-import org.openapi.portfolio.PortfolioResponseBody;
-import org.openapi.portfolio.PortfolioResponseBox;
 import org.openapi.portfolio.QueryType;
 import org.openapi.portfolio.asset.Equity;
 import org.openapi.portfolio.asset.Fund;
 import org.openapi.portfolio.asset.EquityList;
 import org.openapi.portfolio.asset.FundList;
 import org.openapi.portfolio.PortfolioList;
+import org.openapi.portfolio.PortfolioResponseBody;
 
 /**
  *
@@ -89,10 +88,8 @@ public class PortfolioResp {
         portfolioResponse.setPortfolio(portfolio);
         portfolioResponse.setResp(resp);
 
-        PortfolioResponseBox portfolioResponseBox = new PortfolioResponseBox(portfolioResponse);
-
         Gson gson = new Gson();
-        String response = gson.toJson(portfolioResponseBox);
+        String response = gson.toJson(portfolioResponse);
         System.out.println(response);
         System.out.println("Total Length = [" + response.length() + "]");
     }

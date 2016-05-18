@@ -15,7 +15,6 @@ import org.openapi.transaction.TransList;
 import org.openapi.transaction.Transaction;
 import org.openapi.transaction.TransactionHistoryResponse;
 import org.openapi.transaction.TransactionHistoryResponseBody;
-import org.openapi.transaction.TransactionHistoryResponseBox;
 
 /**
  *
@@ -44,7 +43,7 @@ public class TransactionHistoryResp {
         QueryResult queryResult = new QueryResult();
         queryResult.setTotalCnt(1);
         queryResult.setCount(1);
-        queryResult.setPage(0);
+        queryResult.setPage("#102291");
 
         QueryParameter queryParameter = new QueryParameter();
         queryParameter.setFromDate("2016-01-03");
@@ -60,7 +59,7 @@ public class TransactionHistoryResp {
 
         TransList transactionList = new TransList();
         
-        for (int idx = 1; idx < 3; idx++) {
+        for (int idx = 1; idx < 1000; idx++) {
             Transaction transaction = new Transaction();
             String isinCodeString = String.format("%04d", idx);
             transaction.setIsinCode("KR700593" + isinCodeString);
@@ -86,10 +85,8 @@ public class TransactionHistoryResp {
         transactionHistoryResponse.setBody(transactionHistoryResponseBody);
         transactionHistoryResponse.setTransList(transactionList);
 
-        TransactionHistoryResponseBox transactionHistoryResponseBox = new TransactionHistoryResponseBox(transactionHistoryResponse);
-
         Gson gson = new Gson();
-        String response = gson.toJson(transactionHistoryResponseBox);
+        String response = gson.toJson(transactionHistoryResponse);
         System.out.println(response);
         System.out.println("Total Length = [" + response.length() + "]");
     }

@@ -9,7 +9,6 @@ import com.google.gson.Gson;
 import org.openapi.account.VirtualAccount;
 import org.openapi.account.VirtualAccountList;
 import org.openapi.account.VirtualAccountRequest;
-import org.openapi.account.VirtualAccountRequestBox;
 import org.openapi.common.CommonHeader;
 
 /**
@@ -46,11 +45,8 @@ public class VirtualAccountReq {
         virtualAccountRequest.setCommonHeader(commonHeader);
         virtualAccountRequest.setBody(virtualAccountList);
 
-        VirtualAccountRequestBox virtualAccountRequestBox = new VirtualAccountRequestBox(virtualAccountRequest);
-        
-        
         Gson gson = new Gson();
-        String response = gson.toJson(virtualAccountRequestBox);
+        String response = gson.toJson(virtualAccountRequest);
         System.out.println(response);
         System.out.println("Total Length = [" + response.length() + "]");
     }

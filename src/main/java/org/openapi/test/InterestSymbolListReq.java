@@ -6,8 +6,6 @@
 package org.openapi.test;
 
 import com.google.gson.Gson;
-import org.openapi.balance.BalanceRequest;
-import org.openapi.balance.BalanceRequestBox;
 import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;

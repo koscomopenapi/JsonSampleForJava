@@ -11,6 +11,8 @@ package org.openapi.balance;
  */
 public class BalanceSummary {
     double cashBalance;
+    double d1;
+    double d2;
     double substiture;
     double receivable;
     double subsMargin;
@@ -24,8 +26,10 @@ public class BalanceSummary {
     public BalanceSummary() {
     }
 
-    public BalanceSummary(double cashBalance, double substiture, double receivable, double subsMargin, double loanCredit, double valAtTrade, double valueAtCur, double proLoss, double totalAccVal, double cashAvWithdraw) {
+    public BalanceSummary(double cashBalance, double d1, double d2, double substiture, double receivable, double subsMargin, double loanCredit, double valAtTrade, double valueAtCur, double proLoss, double totalAccVal, double cashAvWithdraw) {
         this.cashBalance = cashBalance;
+        this.d1 = d1;
+        this.d2 = d2;
         this.substiture = substiture;
         this.receivable = receivable;
         this.subsMargin = subsMargin;
@@ -43,6 +47,22 @@ public class BalanceSummary {
 
     public void setCashBalance(double cashBalance) {
         this.cashBalance = cashBalance;
+    }
+
+    public double getD1() {
+        return d1;
+    }
+
+    public void setD1(double d1) {
+        this.d1 = d1;
+    }
+
+    public double getD2() {
+        return d2;
+    }
+
+    public void setD2(double d2) {
+        this.d2 = d2;
     }
 
     public double getSubstiture() {
@@ -120,16 +140,18 @@ public class BalanceSummary {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.cashBalance) ^ (Double.doubleToLongBits(this.cashBalance) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.substiture) ^ (Double.doubleToLongBits(this.substiture) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.receivable) ^ (Double.doubleToLongBits(this.receivable) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.subsMargin) ^ (Double.doubleToLongBits(this.subsMargin) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.loanCredit) ^ (Double.doubleToLongBits(this.loanCredit) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.valAtTrade) ^ (Double.doubleToLongBits(this.valAtTrade) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.valueAtCur) ^ (Double.doubleToLongBits(this.valueAtCur) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.proLoss) ^ (Double.doubleToLongBits(this.proLoss) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.totalAccVal) ^ (Double.doubleToLongBits(this.totalAccVal) >>> 32));
-        hash = 19 * hash + (int) (Double.doubleToLongBits(this.cashAvWithdraw) ^ (Double.doubleToLongBits(this.cashAvWithdraw) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.cashBalance) ^ (Double.doubleToLongBits(this.cashBalance) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.d1) ^ (Double.doubleToLongBits(this.d1) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.d2) ^ (Double.doubleToLongBits(this.d2) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.substiture) ^ (Double.doubleToLongBits(this.substiture) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.receivable) ^ (Double.doubleToLongBits(this.receivable) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.subsMargin) ^ (Double.doubleToLongBits(this.subsMargin) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.loanCredit) ^ (Double.doubleToLongBits(this.loanCredit) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.valAtTrade) ^ (Double.doubleToLongBits(this.valAtTrade) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.valueAtCur) ^ (Double.doubleToLongBits(this.valueAtCur) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.proLoss) ^ (Double.doubleToLongBits(this.proLoss) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.totalAccVal) ^ (Double.doubleToLongBits(this.totalAccVal) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.cashAvWithdraw) ^ (Double.doubleToLongBits(this.cashAvWithdraw) >>> 32));
         return hash;
     }
 
@@ -146,6 +168,12 @@ public class BalanceSummary {
         }
         final BalanceSummary other = (BalanceSummary) obj;
         if (Double.doubleToLongBits(this.cashBalance) != Double.doubleToLongBits(other.cashBalance)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.d1) != Double.doubleToLongBits(other.d1)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.d2) != Double.doubleToLongBits(other.d2)) {
             return false;
         }
         if (Double.doubleToLongBits(this.substiture) != Double.doubleToLongBits(other.substiture)) {
@@ -180,8 +208,9 @@ public class BalanceSummary {
 
     @Override
     public String toString() {
-        return "BalanceSummary{" + "cashBalance=" + cashBalance + ", substiture=" + substiture + ", receivable=" + receivable + ", subsMargin=" + subsMargin + ", loanCredit=" + loanCredit + ", valAtTrade=" + valAtTrade + ", valueAtCur=" + valueAtCur + ", proLoss=" + proLoss + ", totalAccVal=" + totalAccVal + ", cashAvWithdraw=" + cashAvWithdraw + '}';
+        return "BalanceSummary{" + "cashBalance=" + cashBalance + ", d1=" + d1 + ", d2=" + d2 + ", substiture=" + substiture + ", receivable=" + receivable + ", subsMargin=" + subsMargin + ", loanCredit=" + loanCredit + ", valAtTrade=" + valAtTrade + ", valueAtCur=" + valueAtCur + ", proLoss=" + proLoss + ", totalAccVal=" + totalAccVal + ", cashAvWithdraw=" + cashAvWithdraw + '}';
     }
+
     
     
 }
