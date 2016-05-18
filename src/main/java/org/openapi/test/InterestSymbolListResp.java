@@ -51,7 +51,7 @@ public class InterestSymbolListResp {
         group.setModifyDate("20160103");
         ArrayList isinCode = new ArrayList();
 
-        for (int idx = 0; idx < 50; idx++) {
+        for (int idx = 0; idx < 4; idx++) {
             String isinCodeString = String.format("%04d", idx);
             isinCode.add("KR700593" + isinCodeString);
         }
@@ -64,7 +64,7 @@ public class InterestSymbolListResp {
         group2.setModifyDate("20160105");
         ArrayList isinList2 = new ArrayList();
 
-        for (int idx = 0; idx < 50; idx++) {
+        for (int idx = 0; idx < 5; idx++) {
             String isinCodeString = String.format("%04d", idx);
             isinList2.add("KR700773" + isinCodeString);
         }

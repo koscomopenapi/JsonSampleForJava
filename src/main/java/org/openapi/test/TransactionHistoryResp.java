@@ -43,7 +43,7 @@ public class TransactionHistoryResp {
         QueryResult queryResult = new QueryResult();
         queryResult.setTotalCnt(1);
         queryResult.setCount(1);
-        queryResult.setPage("#102291");
+        queryResult.setPage("null");
 
         QueryParameter queryParameter = new QueryParameter();
         queryParameter.setFromDate("2016-01-03");
@@ -59,7 +59,7 @@ public class TransactionHistoryResp {
 
         TransList transactionList = new TransList();
         
-        for (int idx = 1; idx < 1000; idx++) {
+        for (int idx = 1; idx < 10; idx++) {
             Transaction transaction = new Transaction();
             String isinCodeString = String.format("%04d", idx);
             transaction.setIsinCode("KR700593" + isinCodeString);

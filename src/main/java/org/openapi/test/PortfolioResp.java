@@ -43,9 +43,12 @@ public class PortfolioResp {
         accInfo.setRealAccNo("001-01-992323232");
         accInfo.setVtAccNp("123214985324234");
         portfolioResponseBody.setAccInfo(accInfo);
+        
         QueryType queryType = new QueryType();
         queryType.setRspType("RAT");
         queryType.setAssetType("ALL");
+        queryType.setCount(0);
+        queryType.setPage("null");
         portfolioResponseBody.setQueryType(queryType);
 
         Equity equity = new Equity();
@@ -84,8 +87,8 @@ public class PortfolioResp {
 
         PortfolioResponse portfolioResponse = new PortfolioResponse();
         portfolioResponse.setCommonHeader(commonHeader);
-        portfolioResponse.setBody(portfolioResponseBody);
-        portfolioResponse.setPortfolio(portfolio);
+        portfolioResponse.setPortfolioRequestBody(portfolioResponseBody);
+        portfolioResponse.setPortfolioList(portfolio);
         portfolioResponse.setResp(resp);
 
         Gson gson = new Gson();

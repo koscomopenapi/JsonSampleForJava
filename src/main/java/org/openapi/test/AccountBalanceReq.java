@@ -50,6 +50,7 @@ public class AccountBalanceReq {
         QueryType queryType = new QueryType();
         queryType.setRspType("RAT");
         queryType.setAssetType("ALL");
+        queryType.setPage("null");
 
         PortfolioRequestBody portfolioRequestBody = new PortfolioRequestBody();
         portfolioRequestBody.setAccInfo(accInfo);

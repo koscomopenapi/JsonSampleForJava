@@ -17,6 +17,7 @@ import org.openapi.common.Response;
 import org.openapi.portfolio.QueryType;
 import org.openapi.portfolio.asset.EquityList;
 import org.openapi.portfolio.asset.FundList;
+import org.openapi.transaction.QueryResult;
 
 /**
  *
@@ -43,10 +44,18 @@ public class AccountBalanceResp {
         accInfo.setRealAccNo("001-01-992323232");
         accInfo.setVtAccNp("123214985324234");
         balanceResponseBody.setAccInfo(accInfo);
+
         QueryType queryType = new QueryType();
         queryType.setRspType("RAT");
         queryType.setAssetType("ALL");
+        queryType.setPage("null");
         balanceResponseBody.setQueryType(queryType);
+
+        QueryResult queryResult = new QueryResult();
+        queryResult.setTotalCnt(1);
+        queryResult.setCount(1);
+        queryResult.setPage("null");
+        balanceResponseBody.setQueryResult(queryResult);
 
         EquityList equityList = new EquityList();
         EquityBalance equityBalance = new EquityBalance();

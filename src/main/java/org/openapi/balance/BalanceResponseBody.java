@@ -6,16 +6,37 @@
 package org.openapi.balance;
 
 import java.util.Objects;
+import org.openapi.common.AccInfo;
+import org.openapi.portfolio.QueryType;
 import org.openapi.transaction.QueryResult;
 
 /**
  *
  * @author heungjae
  */
-public class BalanceResponseBody extends PortfolioRequestBody {
+public class BalanceResponseBody {
+
+    AccInfo accInfo;
+    QueryType queryType;
     QueryResult queryResult;
 
     public BalanceResponseBody() {
+    }
+
+    public AccInfo getAccInfo() {
+        return accInfo;
+    }
+
+    public void setAccInfo(AccInfo accInfo) {
+        this.accInfo = accInfo;
+    }
+
+    public QueryType getQueryType() {
+        return queryType;
+    }
+
+    public void setQueryType(QueryType queryType) {
+        this.queryType = queryType;
     }
 
     public QueryResult getQueryResult() {
@@ -28,8 +49,10 @@ public class BalanceResponseBody extends PortfolioRequestBody {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(this.queryResult);
+        int hash = 3;
+        hash = 13 * hash + Objects.hashCode(this.accInfo);
+        hash = 13 * hash + Objects.hashCode(this.queryType);
+        hash = 13 * hash + Objects.hashCode(this.queryResult);
         return hash;
     }
 
@@ -45,6 +68,12 @@ public class BalanceResponseBody extends PortfolioRequestBody {
             return false;
         }
         final BalanceResponseBody other = (BalanceResponseBody) obj;
+        if (!Objects.equals(this.accInfo, other.accInfo)) {
+            return false;
+        }
+        if (!Objects.equals(this.queryType, other.queryType)) {
+            return false;
+        }
         if (!Objects.equals(this.queryResult, other.queryResult)) {
             return false;
         }
@@ -53,8 +82,7 @@ public class BalanceResponseBody extends PortfolioRequestBody {
 
     @Override
     public String toString() {
-        return "BalanceResponseBody{" + "queryResult=" + queryResult + '}';
+        return "BalanceResponseBody{" + "accInfo=" + accInfo + ", queryType=" + queryType + ", queryResult=" + queryResult + '}';
     }
-    
-    
+
 }

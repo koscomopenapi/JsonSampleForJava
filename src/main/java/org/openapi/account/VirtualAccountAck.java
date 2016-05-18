@@ -11,21 +11,48 @@ import java.util.Objects;
  *
  * @author heungjae
  */
-public class VirtualAccountAck extends VirtualAccount {
-
+public class VirtualAccountAck  {
+    
+    String trCode;
+    String realAccNo;
+    String vtAccNo;
+    String vtAccAlias;
     String status;
     String message;
 
     public VirtualAccountAck() {
     }
 
-    public VirtualAccountAck(String trCode, String realAccNo, String vtAccNo, String vtAccAlias, String status, String message) {
+    public String getTrCode() {
+        return trCode;
+    }
+
+    public void setTrCode(String trCode) {
         this.trCode = trCode;
+    }
+
+    public String getRealAccNo() {
+        return realAccNo;
+    }
+
+    public void setRealAccNo(String realAccNo) {
         this.realAccNo = realAccNo;
+    }
+
+    public String getVtAccNo() {
+        return vtAccNo;
+    }
+
+    public void setVtAccNo(String vtAccNo) {
         this.vtAccNo = vtAccNo;
+    }
+
+    public String getVtAccAlias() {
+        return vtAccAlias;
+    }
+
+    public void setVtAccAlias(String vtAccAlias) {
         this.vtAccAlias = vtAccAlias;
-        this.status = status;
-        this.message = message;
     }
 
     public String getStatus() {
@@ -46,13 +73,13 @@ public class VirtualAccountAck extends VirtualAccount {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.trCode);
-        hash = 67 * hash + Objects.hashCode(this.realAccNo);
-        hash = 67 * hash + Objects.hashCode(this.vtAccNo);
-        hash = 67 * hash + Objects.hashCode(this.vtAccAlias);
-        hash = 67 * hash + Objects.hashCode(this.status);
-        hash = 67 * hash + Objects.hashCode(this.message);
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.trCode);
+        hash = 37 * hash + Objects.hashCode(this.realAccNo);
+        hash = 37 * hash + Objects.hashCode(this.vtAccNo);
+        hash = 37 * hash + Objects.hashCode(this.vtAccAlias);
+        hash = 37 * hash + Objects.hashCode(this.status);
+        hash = 37 * hash + Objects.hashCode(this.message);
         return hash;
     }
 
@@ -91,9 +118,10 @@ public class VirtualAccountAck extends VirtualAccount {
 
     @Override
     public String toString() {
-        return "VirtualAccountResponse{" + "trCode=" + trCode + ", realAccNo=" + realAccNo + ", vtAccNo=" + vtAccNo + ", vtAccAlias=" + vtAccAlias + ", status=" + status + ", message=" + message + '}';
+        return "VirtualAccountAck{" + "trCode=" + trCode + ", realAccNo=" + realAccNo + ", vtAccNo=" + vtAccNo + ", vtAccAlias=" + vtAccAlias + ", status=" + status + ", message=" + message + '}';
     }
 
+    
 
     
 }

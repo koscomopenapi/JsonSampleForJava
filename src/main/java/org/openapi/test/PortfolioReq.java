@@ -50,6 +50,8 @@ public class PortfolioReq {
         QueryType queryType = new QueryType();
         queryType.setRspType("RAT");
         queryType.setAssetType("ALL");
+        queryType.setCount(0);
+        queryType.setPage("null");
         portfolioRequestBody.setQueryType(queryType);
         
         PortfolioRequest portfolioRequest = new PortfolioRequest();
