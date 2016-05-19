@@ -51,10 +51,9 @@ public class InterestSymbolListReq {
         interestSymbolListRequest.setDevInfo(devInfo);
         interestSymbolListRequest.setAccInfo(accInfo);
         
-        InterestSymbolListRequestBox interestSymbolListRequestBox = new InterestSymbolListRequestBox(interestSymbolListRequest);
-        
+
         Gson gson = new Gson();
-        String request = gson.toJson(interestSymbolListRequestBox);
+        String request = gson.toJson(interestSymbolListRequest);
         System.out.println(request);
         System.out.println("Total Length = [" + request.length() + "]");
     }

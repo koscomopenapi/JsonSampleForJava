@@ -89,11 +89,8 @@ public class InterestSymbolListResp {
         interestSymbolListResponse.setInterestSymbolGroupList(groupList);
         interestSymbolListResponse.setResp(resp);
         
-        InterestSymbolListResponseBox interestSymbolListResponseBox = new InterestSymbolListResponseBox(interestSymbolListResponse);
-        
-
         Gson gson = new Gson();
-        String response = gson.toJson(interestSymbolListResponseBox);
+        String response = gson.toJson(interestSymbolListResponse);
         System.out.println(response);
         System.out.println("Total Length = [" + response.length() + "]");
 
