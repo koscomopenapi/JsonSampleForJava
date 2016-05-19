@@ -6,19 +6,23 @@
 package org.openapi.transaction;
 
 import java.util.Objects;
+import org.openapi.common.AccInfo;
 
 /**
  *
  * @author heungjae
  */
 public class TransactionHistoryRequestBody {
+
+    AccInfo accInfo;
     QueryParameter queryParameter;
 
-    public TransactionHistoryRequestBody() {
+    public AccInfo getAccInfo() {
+        return accInfo;
     }
 
-    public TransactionHistoryRequestBody(QueryParameter queryParameter) {
-        this.queryParameter = queryParameter;
+    public void setAccInfo(AccInfo accInfo) {
+        this.accInfo = accInfo;
     }
 
     public QueryParameter getQueryParameter() {
@@ -32,7 +36,8 @@ public class TransactionHistoryRequestBody {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.queryParameter);
+        hash = 17 * hash + Objects.hashCode(this.accInfo);
+        hash = 17 * hash + Objects.hashCode(this.queryParameter);
         return hash;
     }
 
@@ -48,6 +53,9 @@ public class TransactionHistoryRequestBody {
             return false;
         }
         final TransactionHistoryRequestBody other = (TransactionHistoryRequestBody) obj;
+        if (!Objects.equals(this.accInfo, other.accInfo)) {
+            return false;
+        }
         if (!Objects.equals(this.queryParameter, other.queryParameter)) {
             return false;
         }
@@ -56,7 +64,9 @@ public class TransactionHistoryRequestBody {
 
     @Override
     public String toString() {
-        return "TransactionHistoryRequestBody{" + "queryParameter=" + queryParameter + '}';
+        return "TransactionHistoryRequestBody{" + "accInfo=" + accInfo + ", queryParameter=" + queryParameter + '}';
     }
-    
+
+
+
 }

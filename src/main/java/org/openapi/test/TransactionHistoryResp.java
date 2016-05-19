@@ -54,12 +54,13 @@ public class TransactionHistoryResp {
         queryParameter.setPage(0);
 
         TransactionHistoryResponseBody transactionHistoryResponseBody = new TransactionHistoryResponseBody();
+        transactionHistoryResponseBody.setAccInfo(accInfo);
         transactionHistoryResponseBody.setQueryParameter(queryParameter);
         transactionHistoryResponseBody.setQueryResult(queryResult);
 
         TransList transactionList = new TransList();
         
-        for (int idx = 1; idx < 10; idx++) {
+        for (int idx = 1; idx < 6; idx++) {
             Transaction transaction = new Transaction();
             String isinCodeString = String.format("%04d", idx);
             transaction.setIsinCode("KR700593" + isinCodeString);
@@ -81,8 +82,7 @@ public class TransactionHistoryResp {
 
         TransactionHistoryResponse transactionHistoryResponse = new TransactionHistoryResponse();
         transactionHistoryResponse.setCommonHeader(commonHeader);
-        transactionHistoryResponse.setAccInfo(accInfo);
-        transactionHistoryResponse.setBody(transactionHistoryResponseBody);
+        transactionHistoryResponse.setTransactionHistoryResponseBody(transactionHistoryResponseBody);
         transactionHistoryResponse.setTransList(transactionList);
 
         Gson gson = new Gson();

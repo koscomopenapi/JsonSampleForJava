@@ -53,14 +53,14 @@ public class TransactionHistoryReq {
         queryParameter.setPage(0);
 
         TransactionHistoryRequestBody transactionHistoryRequestBody = new TransactionHistoryRequestBody();
+        transactionHistoryRequestBody.setAccInfo(accInfo);
         transactionHistoryRequestBody.setQueryParameter(queryParameter);
 
         TransactionHistoryRequest TransactionHistoryRequest = new TransactionHistoryRequest();
         TransactionHistoryRequest.setPartner(partner);
         TransactionHistoryRequest.setDevInfo(devInfo);
         TransactionHistoryRequest.setCommonHeader(commonHeader);
-        TransactionHistoryRequest.setAccInfo(accInfo);
-        TransactionHistoryRequest.setBody(transactionHistoryRequestBody);
+        TransactionHistoryRequest.setTransactionHistoryRequestBody(transactionHistoryRequestBody);
 
         Gson gson = new Gson();
         String request = gson.toJson(TransactionHistoryRequest);

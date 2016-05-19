@@ -18,11 +18,6 @@ public class DevInfo {
     public DevInfo() {
     }
 
-    public DevInfo(String ipAddr, String macAddr) {
-        this.ipAddr = ipAddr;
-        this.macAddr = macAddr;
-    }
-
     public String getIpAddr() {
         return ipAddr;
     }
@@ -41,9 +36,9 @@ public class DevInfo {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 83 * hash + Objects.hashCode(this.ipAddr);
-        hash = 83 * hash + Objects.hashCode(this.macAddr);
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.ipAddr);
+        hash = 59 * hash + Objects.hashCode(this.macAddr);
         return hash;
     }
 
@@ -72,6 +67,6 @@ public class DevInfo {
     public String toString() {
         return "DevInfo{" + "ipAddr=" + ipAddr + ", macAddr=" + macAddr + '}';
     }
-    
-    
+
+
 }

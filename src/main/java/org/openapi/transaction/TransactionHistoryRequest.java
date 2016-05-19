@@ -6,7 +6,6 @@
 package org.openapi.transaction;
 
 import java.util.Objects;
-import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
@@ -20,18 +19,10 @@ public class TransactionHistoryRequest {
     Partner partner;
     CommonHeader commonHeader;
     DevInfo devInfo;
-    AccInfo accInfo;
-    TransactionHistoryRequestBody transactionHistoryRequestBody;
-    
-    public TransactionHistoryRequest() {
-    }
 
-    public TransactionHistoryRequest(Partner partner, CommonHeader commonHeader, DevInfo devInfo, AccInfo accInfo, TransactionHistoryRequestBody body) {
-        this.partner = partner;
-        this.commonHeader = commonHeader;
-        this.devInfo = devInfo;
-        this.accInfo = accInfo;
-        this.transactionHistoryRequestBody = body;
+    TransactionHistoryRequestBody transactionHistoryRequestBody;
+
+    public TransactionHistoryRequest() {
     }
 
     public Partner getPartner() {
@@ -58,30 +49,21 @@ public class TransactionHistoryRequest {
         this.devInfo = devInfo;
     }
 
-    public AccInfo getAccInfo() {
-        return accInfo;
-    }
-
-    public void setAccInfo(AccInfo accInfo) {
-        this.accInfo = accInfo;
-    }
-
-    public TransactionHistoryRequestBody getBody() {
+    public TransactionHistoryRequestBody getTransactionHistoryRequestBody() {
         return transactionHistoryRequestBody;
     }
 
-    public void setBody(TransactionHistoryRequestBody body) {
-        this.transactionHistoryRequestBody = body;
+    public void setTransactionHistoryRequestBody(TransactionHistoryRequestBody transactionHistoryRequestBody) {
+        this.transactionHistoryRequestBody = transactionHistoryRequestBody;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.partner);
-        hash = 89 * hash + Objects.hashCode(this.commonHeader);
-        hash = 89 * hash + Objects.hashCode(this.devInfo);
-        hash = 89 * hash + Objects.hashCode(this.accInfo);
-        hash = 89 * hash + Objects.hashCode(this.transactionHistoryRequestBody);
+        hash = 97 * hash + Objects.hashCode(this.partner);
+        hash = 97 * hash + Objects.hashCode(this.commonHeader);
+        hash = 97 * hash + Objects.hashCode(this.devInfo);
+        hash = 97 * hash + Objects.hashCode(this.transactionHistoryRequestBody);
         return hash;
     }
 
@@ -106,9 +88,6 @@ public class TransactionHistoryRequest {
         if (!Objects.equals(this.devInfo, other.devInfo)) {
             return false;
         }
-        if (!Objects.equals(this.accInfo, other.accInfo)) {
-            return false;
-        }
         if (!Objects.equals(this.transactionHistoryRequestBody, other.transactionHistoryRequestBody)) {
             return false;
         }
@@ -117,8 +96,9 @@ public class TransactionHistoryRequest {
 
     @Override
     public String toString() {
-        return "TransactionHistoryRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", devInfo=" + devInfo + ", accInfo=" + accInfo + ", body=" + transactionHistoryRequestBody + '}';
+        return "TransactionHistoryRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", devInfo=" + devInfo + ", transactionHistoryRequestBody=" + transactionHistoryRequestBody + '}';
     }
+    
 
 
     

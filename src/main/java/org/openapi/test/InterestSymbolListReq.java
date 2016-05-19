@@ -11,7 +11,6 @@ import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
 import org.openapi.symbol.InterestSymbolListRequest;
-import org.openapi.symbol.InterestSymbolListRequestBox;
 
 /**
  *

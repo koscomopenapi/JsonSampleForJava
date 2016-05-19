@@ -15,21 +15,13 @@ import org.openapi.common.Response;
  * @author heungjae
  */
 public class TransactionHistoryResponse {
+
     CommonHeader commonHeader;
-    AccInfo accInfo;
     TransactionHistoryResponseBody transactionHistoryResponseBody;
     TransList transList;
     Response resp;
 
     public TransactionHistoryResponse() {
-    }
-
-    public TransactionHistoryResponse(CommonHeader commonHeader, AccInfo accInfo, TransactionHistoryResponseBody body, TransList transList, Response resp) {
-        this.commonHeader = commonHeader;
-        this.accInfo = accInfo;
-        this.transactionHistoryResponseBody = body;
-        this.transList = transList;
-        this.resp = resp;
     }
 
     public CommonHeader getCommonHeader() {
@@ -40,20 +32,12 @@ public class TransactionHistoryResponse {
         this.commonHeader = commonHeader;
     }
 
-    public AccInfo getAccInfo() {
-        return accInfo;
-    }
-
-    public void setAccInfo(AccInfo accInfo) {
-        this.accInfo = accInfo;
-    }
-
-    public TransactionHistoryResponseBody getBody() {
+    public TransactionHistoryResponseBody getTransactionHistoryResponseBody() {
         return transactionHistoryResponseBody;
     }
 
-    public void setBody(TransactionHistoryResponseBody body) {
-        this.transactionHistoryResponseBody = body;
+    public void setTransactionHistoryResponseBody(TransactionHistoryResponseBody transactionHistoryResponseBody) {
+        this.transactionHistoryResponseBody = transactionHistoryResponseBody;
     }
 
     public TransList getTransList() {
@@ -74,12 +58,11 @@ public class TransactionHistoryResponse {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.commonHeader);
-        hash = 41 * hash + Objects.hashCode(this.accInfo);
-        hash = 41 * hash + Objects.hashCode(this.transactionHistoryResponseBody);
-        hash = 41 * hash + Objects.hashCode(this.transList);
-        hash = 41 * hash + Objects.hashCode(this.resp);
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.commonHeader);
+        hash = 79 * hash + Objects.hashCode(this.transactionHistoryResponseBody);
+        hash = 79 * hash + Objects.hashCode(this.transList);
+        hash = 79 * hash + Objects.hashCode(this.resp);
         return hash;
     }
 
@@ -98,9 +81,6 @@ public class TransactionHistoryResponse {
         if (!Objects.equals(this.commonHeader, other.commonHeader)) {
             return false;
         }
-        if (!Objects.equals(this.accInfo, other.accInfo)) {
-            return false;
-        }
         if (!Objects.equals(this.transactionHistoryResponseBody, other.transactionHistoryResponseBody)) {
             return false;
         }
@@ -115,8 +95,8 @@ public class TransactionHistoryResponse {
 
     @Override
     public String toString() {
-        return "TransactionHistoryResponse{" + "commonHeader=" + commonHeader + ", accInfo=" + accInfo + ", body=" + transactionHistoryResponseBody + ", transList=" + transList + ", resp=" + resp + '}';
+        return "TransactionHistoryResponse{" + "commonHeader=" + commonHeader + ", transactionHistoryResponseBody=" + transactionHistoryResponseBody + ", transList=" + transList + ", resp=" + resp + '}';
     }
-    
-    
+
+
 }

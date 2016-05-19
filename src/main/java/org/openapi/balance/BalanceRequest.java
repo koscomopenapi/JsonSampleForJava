@@ -18,7 +18,7 @@ import org.openapi.common.Partner;
 public class BalanceRequest {
     Partner partner;
     CommonHeader commonHeader;
-    DevInfo DevInfo;
+    DevInfo devInfo;
     PortfolioRequestBody balanceRequestBody;
 
     public BalanceRequest() {
@@ -27,7 +27,7 @@ public class BalanceRequest {
     public BalanceRequest(Partner partner, CommonHeader commonHeader, DevInfo DevInfo, PortfolioRequestBody balanceRequestBody) {
         this.partner = partner;
         this.commonHeader = commonHeader;
-        this.DevInfo = DevInfo;
+        this.devInfo = DevInfo;
         this.balanceRequestBody = balanceRequestBody;
     }
 
@@ -48,11 +48,11 @@ public class BalanceRequest {
     }
 
     public DevInfo getDevInfo() {
-        return DevInfo;
+        return devInfo;
     }
 
     public void setDevInfo(DevInfo DevInfo) {
-        this.DevInfo = DevInfo;
+        this.devInfo = DevInfo;
     }
 
     public PortfolioRequestBody getPortfolioRequestBody() {
@@ -68,7 +68,7 @@ public class BalanceRequest {
         int hash = 5;
         hash = 19 * hash + Objects.hashCode(this.partner);
         hash = 19 * hash + Objects.hashCode(this.commonHeader);
-        hash = 19 * hash + Objects.hashCode(this.DevInfo);
+        hash = 19 * hash + Objects.hashCode(this.devInfo);
         hash = 19 * hash + Objects.hashCode(this.balanceRequestBody);
         return hash;
     }
@@ -91,7 +91,7 @@ public class BalanceRequest {
         if (!Objects.equals(this.commonHeader, other.commonHeader)) {
             return false;
         }
-        if (!Objects.equals(this.DevInfo, other.DevInfo)) {
+        if (!Objects.equals(this.devInfo, other.devInfo)) {
             return false;
         }
         return Objects.equals(this.balanceRequestBody, other.balanceRequestBody);
@@ -99,7 +99,7 @@ public class BalanceRequest {
 
     @Override
     public String toString() {
-        return "BalanceRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", DevInfo=" + DevInfo + ", balanceRequestBody=" + balanceRequestBody + '}';
+        return "BalanceRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", DevInfo=" + devInfo + ", balanceRequestBody=" + balanceRequestBody + '}';
     }
     
     
