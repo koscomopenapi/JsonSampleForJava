@@ -13,8 +13,7 @@ import org.openapi.common.Response;
 import org.openapi.symbol.Group;
 import org.openapi.symbol.GroupList;
 import org.openapi.symbol.InterestSymbolListResponse;
-import org.openapi.symbol.InterestSymbolListResponseBox;
-
+import org.openapi.symbol.InterestSymbolListResponseBody;
 /**
  *
  * @author heungjae
@@ -84,10 +83,13 @@ public class InterestSymbolListResp {
         // interestInstrumentResponse
         /////////////////////////////
         InterestSymbolListResponse interestSymbolListResponse = new InterestSymbolListResponse();
-        interestSymbolListResponse.setCommonHeader(commonHeader);
-        interestSymbolListResponse.setAccInfo(accInfo);
-        interestSymbolListResponse.setInterestSymbolGroupList(groupList);
-        interestSymbolListResponse.setResp(resp);
+        InterestSymbolListResponseBody interestSymbolListResponseBody = new InterestSymbolListResponseBody();
+        
+        interestSymbolListResponseBody.setAccInfo(accInfo);
+        interestSymbolListResponseBody.setGroupList(groupList);
+        interestSymbolListResponseBody.setResp(resp);
+        interestSymbolListResponse.setInterestSymbolListResponseBody(interestSymbolListResponseBody);
+        
         
         Gson gson = new Gson();
         String response = gson.toJson(interestSymbolListResponse);

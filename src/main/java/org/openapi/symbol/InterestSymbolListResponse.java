@@ -5,9 +5,8 @@
  */
 package org.openapi.symbol;
 
-import org.openapi.common.AccInfo;
+import java.util.Objects;
 import org.openapi.common.CommonHeader;
-import org.openapi.common.Response;
 
 /**
  *
@@ -15,18 +14,14 @@ import org.openapi.common.Response;
  */
 public class InterestSymbolListResponse {
     CommonHeader commonHeader;
-    AccInfo accInfo;
-    GroupList groupList;
-    Response resp;
-
-    public InterestSymbolListResponse(CommonHeader commonHeader, AccInfo accInfo, GroupList interestSymbolGroupList, Response resp) {
-        this.commonHeader = commonHeader;
-        this.accInfo = accInfo;
-        this.groupList = interestSymbolGroupList;
-        this.resp = resp;
-    }
+    InterestSymbolListResponseBody InterestSymbolListResponseBody;
 
     public InterestSymbolListResponse() {
+    }
+
+    public InterestSymbolListResponse(CommonHeader commonHeader, InterestSymbolListResponseBody InterestSymbolListResponseBody) {
+        this.commonHeader = commonHeader;
+        this.InterestSymbolListResponseBody = InterestSymbolListResponseBody;
     }
 
     public CommonHeader getCommonHeader() {
@@ -37,28 +32,47 @@ public class InterestSymbolListResponse {
         this.commonHeader = commonHeader;
     }
 
-    public AccInfo getAccInfo() {
-        return accInfo;
+    public InterestSymbolListResponseBody getInterestSymbolListResponseBody() {
+        return InterestSymbolListResponseBody;
     }
 
-    public void setAccInfo(AccInfo accInfo) {
-        this.accInfo = accInfo;
+    public void setInterestSymbolListResponseBody(InterestSymbolListResponseBody InterestSymbolListResponseBody) {
+        this.InterestSymbolListResponseBody = InterestSymbolListResponseBody;
     }
 
-    public GroupList getInterestSymbolGroupList() {
-        return groupList;
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 73 * hash + Objects.hashCode(this.commonHeader);
+        hash = 73 * hash + Objects.hashCode(this.InterestSymbolListResponseBody);
+        return hash;
     }
 
-    public void setInterestSymbolGroupList(GroupList interestSymbolGroupList) {
-        this.groupList = interestSymbolGroupList;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final InterestSymbolListResponse other = (InterestSymbolListResponse) obj;
+        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
+            return false;
+        }
+        if (!Objects.equals(this.InterestSymbolListResponseBody, other.InterestSymbolListResponseBody)) {
+            return false;
+        }
+        return true;
     }
 
-    public Response getResp() {
-        return resp;
+    @Override
+    public String toString() {
+        return "InterestSymbolListResponse{" + "commonHeader=" + commonHeader + ", InterestSymbolListResponseBody=" + InterestSymbolListResponseBody + '}';
     }
-
-    public void setResp(Response resp) {
-        this.resp = resp;
-    }
+    
     
 }

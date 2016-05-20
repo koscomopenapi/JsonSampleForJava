@@ -11,6 +11,7 @@ import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
 import org.openapi.symbol.InterestSymbolListRequest;
+import org.openapi.symbol.InterestSymbolListRequestBody;
 
 /**
  *
@@ -48,8 +49,10 @@ public class InterestSymbolListReq {
         interestSymbolListRequest.setPartner(partner);
         interestSymbolListRequest.setCommonHeader(commonHeader);
         interestSymbolListRequest.setDevInfo(devInfo);
-        interestSymbolListRequest.setAccInfo(accInfo);
-        
+
+        InterestSymbolListRequestBody interestSymbolListRequestBody = new InterestSymbolListRequestBody();
+        interestSymbolListRequestBody.setAccInfo(accInfo);
+        interestSymbolListRequest.setInterestSymbolListRequestBody(interestSymbolListRequestBody);
 
         Gson gson = new Gson();
         String request = gson.toJson(interestSymbolListRequest);
