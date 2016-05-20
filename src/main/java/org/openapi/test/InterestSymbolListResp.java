@@ -83,6 +83,7 @@ public class InterestSymbolListResp {
         // interestInstrumentResponse
         /////////////////////////////
         InterestSymbolListResponse interestSymbolListResponse = new InterestSymbolListResponse();
+        interestSymbolListResponse.setCommonHeader(commonHeader);
         InterestSymbolListResponseBody interestSymbolListResponseBody = new InterestSymbolListResponseBody();
         
         interestSymbolListResponseBody.setAccInfo(accInfo);
