@@ -9,25 +9,43 @@ import java.util.Objects;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
-import org.openapi.common.reqrep.CommonReq;
 
 /**
  *
  * @author heungjae
  */
-public class InterestSymbolListRequest extends CommonReq {
+public class InterestSymbolListRequest {
+
+    Partner partner;
+    CommonHeader commonHeader;
+    DevInfo devInfo;
     private InterestSymbolListRequestBody interestSymbolListRequestBody;
 
-    public InterestSymbolListRequest(InterestSymbolListRequestBody interestSymbolListRequestBody) {
-        this.interestSymbolListRequestBody = interestSymbolListRequestBody;
-    }
-
-    public InterestSymbolListRequest(InterestSymbolListRequestBody interestSymbolListRequestBody, Partner partner, CommonHeader commonHeader, DevInfo devInfo) {
-        super(partner, commonHeader, devInfo);
-        this.interestSymbolListRequestBody = interestSymbolListRequestBody;
-    }
-
     public InterestSymbolListRequest() {
+    }
+
+    public Partner getPartner() {
+        return partner;
+    }
+
+    public void setPartner(Partner partner) {
+        this.partner = partner;
+    }
+
+    public CommonHeader getCommonHeader() {
+        return commonHeader;
+    }
+
+    public void setCommonHeader(CommonHeader commonHeader) {
+        this.commonHeader = commonHeader;
+    }
+
+    public DevInfo getDevInfo() {
+        return devInfo;
+    }
+
+    public void setDevInfo(DevInfo devInfo) {
+        this.devInfo = devInfo;
     }
 
     public InterestSymbolListRequestBody getInterestSymbolListRequestBody() {
@@ -41,7 +59,10 @@ public class InterestSymbolListRequest extends CommonReq {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.interestSymbolListRequestBody);
+        hash = 29 * hash + Objects.hashCode(this.partner);
+        hash = 29 * hash + Objects.hashCode(this.commonHeader);
+        hash = 29 * hash + Objects.hashCode(this.devInfo);
+        hash = 29 * hash + Objects.hashCode(this.interestSymbolListRequestBody);
         return hash;
     }
 
@@ -57,6 +78,15 @@ public class InterestSymbolListRequest extends CommonReq {
             return false;
         }
         final InterestSymbolListRequest other = (InterestSymbolListRequest) obj;
+        if (!Objects.equals(this.partner, other.partner)) {
+            return false;
+        }
+        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
+            return false;
+        }
+        if (!Objects.equals(this.devInfo, other.devInfo)) {
+            return false;
+        }
         if (!Objects.equals(this.interestSymbolListRequestBody, other.interestSymbolListRequestBody)) {
             return false;
         }
@@ -65,9 +95,9 @@ public class InterestSymbolListRequest extends CommonReq {
 
     @Override
     public String toString() {
-        return "InterestSymbolListRequest{" + "interestSymbolListRequestBody=" + interestSymbolListRequestBody + '}';
+        return "InterestSymbolListRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", devInfo=" + devInfo + ", interestSymbolListRequestBody=" + interestSymbolListRequestBody + '}';
     }
-    
-    
-    
+
+
+
 }
