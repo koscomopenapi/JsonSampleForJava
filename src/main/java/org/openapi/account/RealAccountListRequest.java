@@ -6,6 +6,7 @@
 package org.openapi.account;
 
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 
 /**
  *
@@ -13,12 +14,14 @@ import org.openapi.common.CommonHeader;
  */
 public class RealAccountListRequest {
     CommonHeader commonHeader;
+    PlatformFields platformFields;
 
     public RealAccountListRequest() {
     }
 
-    public RealAccountListRequest(CommonHeader commonHeader) {
+    public RealAccountListRequest(CommonHeader commonHeader, PlatformFields platformFields) {
         this.commonHeader = commonHeader;
+        this.platformFields = platformFields;
     }
     
 }

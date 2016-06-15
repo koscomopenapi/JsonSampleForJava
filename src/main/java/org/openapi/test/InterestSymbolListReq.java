@@ -10,6 +10,7 @@ import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
+import org.openapi.common.PlatformFields;
 import org.openapi.symbol.InterestSymbolListRequest;
 import org.openapi.symbol.InterestSymbolListRequestBody;
 
@@ -36,6 +37,11 @@ public class InterestSymbolListReq {
         commonHeader.setReqIdConsumer("Uberple-00001");
         commonHeader.setCertDn("cn=김흥재_0000033643,ou=KOSCOM,ou=LicensedCA,o=SignKorea,c=KR");
         commonHeader.setCi("834f889833602f174a706138f19778a2dc6eee0f834f889833602f174a706138f19778a2dc6eee0feee0f22");
+        
+        PlatformFields platformField = new PlatformFields();
+        platformField.setPortalId("khj932");
+        platformField.setApiAccessToken("a308159b-2ab890c8de6");
+        platformField.setApiAccessTokenLifetime("600");
 
         DevInfo devInfo = new DevInfo();
         devInfo.setIpAddr("192168001010");
@@ -43,11 +49,12 @@ public class InterestSymbolListReq {
         
         InterestSymbolListRequest interestSymbolListRequest = new InterestSymbolListRequest();
         AccInfo accInfo = new AccInfo();
-        accInfo.setRealAccNo("001-01-992323232");
+        accInfo.setRealAccNo("40113387510");
         accInfo.setVtAccNp("123214985324234");
        
         interestSymbolListRequest.setPartner(partner);
         interestSymbolListRequest.setCommonHeader(commonHeader);
+        interestSymbolListRequest.setPlatformFields(platformField);
         interestSymbolListRequest.setDevInfo(devInfo);
 
         InterestSymbolListRequestBody interestSymbolListRequestBody = new InterestSymbolListRequestBody();

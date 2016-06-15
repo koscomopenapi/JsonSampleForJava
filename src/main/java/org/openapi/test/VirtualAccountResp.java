@@ -10,6 +10,7 @@ import org.openapi.account.VirtualAccountAck;
 import org.openapi.account.VirtualAccountResponse;
 import org.openapi.account.VirtualAccountResponseList;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
 
 /**
@@ -32,6 +33,11 @@ public class VirtualAccountResp {
         commonHeader.setReqIdConsumer("Uberple-00001");
         commonHeader.setCertDn("cn=김흥재_0000033643,ou=KOSCOM,ou=LicensedCA,o=SignKorea,c=KR");
         commonHeader.setCi("834f889833602f174a706138f19778a2dc6eee0f834f889833602f174a706138f19778a2dc6eee0feee0f22");
+             
+        PlatformFields platformField = new PlatformFields();
+        platformField.setPortalId("khj932");
+        platformField.setApiAccessToken("a308159b-2ab890c8de6");
+        platformField.setApiAccessTokenLifetime("600");
 
         VirtualAccountResponseList virtualAccountResponseList = new VirtualAccountResponseList();
         VirtualAccountAck virtualAccountAck = new VirtualAccountAck();
@@ -54,7 +60,8 @@ public class VirtualAccountResp {
         
         VirtualAccountResponse virtualAccountResponse = new VirtualAccountResponse();
         virtualAccountResponse.setCommonHeader(commonHeader);
-        virtualAccountResponse.setBody(virtualAccountResponseList);
+        virtualAccountResponse.setPlatformFields(platformField);
+        virtualAccountResponse.setVirtualAccountResponseList(virtualAccountResponseList);
         virtualAccountResponse.setResp(resp);
 
         Gson gson = new Gson();

@@ -5,10 +5,10 @@
  */
 package org.openapi.transaction;
 
-import java.util.Objects;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
+import org.openapi.common.PlatformFields;
 
 /**
  *
@@ -18,11 +18,20 @@ public class TransactionHistoryRequest {
     
     Partner partner;
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     DevInfo devInfo;
 
     TransactionHistoryRequestBody transactionHistoryRequestBody;
 
     public TransactionHistoryRequest() {
+    }
+
+    public TransactionHistoryRequest(Partner partner, CommonHeader commonHeader, PlatformFields platformFields, DevInfo devInfo, TransactionHistoryRequestBody transactionHistoryRequestBody) {
+        this.partner = partner;
+        this.commonHeader = commonHeader;
+        this.platformFields = platformFields;
+        this.devInfo = devInfo;
+        this.transactionHistoryRequestBody = transactionHistoryRequestBody;
     }
 
     public Partner getPartner() {
@@ -39,6 +48,14 @@ public class TransactionHistoryRequest {
 
     public void setCommonHeader(CommonHeader commonHeader) {
         this.commonHeader = commonHeader;
+    }
+
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
     }
 
     public DevInfo getDevInfo() {
@@ -58,46 +75,10 @@ public class TransactionHistoryRequest {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.partner);
-        hash = 97 * hash + Objects.hashCode(this.commonHeader);
-        hash = 97 * hash + Objects.hashCode(this.devInfo);
-        hash = 97 * hash + Objects.hashCode(this.transactionHistoryRequestBody);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final TransactionHistoryRequest other = (TransactionHistoryRequest) obj;
-        if (!Objects.equals(this.partner, other.partner)) {
-            return false;
-        }
-        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
-            return false;
-        }
-        if (!Objects.equals(this.devInfo, other.devInfo)) {
-            return false;
-        }
-        if (!Objects.equals(this.transactionHistoryRequestBody, other.transactionHistoryRequestBody)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "TransactionHistoryRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", devInfo=" + devInfo + ", transactionHistoryRequestBody=" + transactionHistoryRequestBody + '}';
+        return "TransactionHistoryRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", devInfo=" + devInfo + ", transactionHistoryRequestBody=" + transactionHistoryRequestBody + '}';
     }
+
     
 
 

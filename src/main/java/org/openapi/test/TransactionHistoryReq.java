@@ -10,6 +10,7 @@ import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
+import org.openapi.common.PlatformFields;
 import org.openapi.transaction.QueryParameter;
 import org.openapi.transaction.TransactionHistoryRequest;
 import org.openapi.transaction.TransactionHistoryRequestBody;
@@ -33,15 +34,20 @@ public class TransactionHistoryReq {
         CommonHeader commonHeader = new CommonHeader();
         commonHeader.setReqIdPlatform("P0001-ABC-0001");
         commonHeader.setReqIdConsumer("Uberple-00001");
-        commonHeader.setCertDn("cn=김흥재_0000033643,ou=KOSCOM,ou=LicensedCA,o=SignKorea,c=KR");
+        commonHeader.setCertDn("cn=오픈테스트,ou=HTS,ou=대신,ou=증권,o=SignKorea,c=KR");
         commonHeader.setCi("834f889833602f174a706138f19778a2dc6eee0f834f889833602f174a706138f19778a2dc6eee0feee0f22");
+
+        PlatformFields platformField = new PlatformFields();
+        platformField.setPortalId("khj932");
+        platformField.setApiAccessToken("a308159b-2ab890c8de6");
+        platformField.setApiAccessTokenLifetime("600");
 
         DevInfo devInfo = new DevInfo();
         devInfo.setIpAddr("192168001010");
         devInfo.setMacAddr("7054D27EE247");
 
         AccInfo accInfo = new AccInfo();
-        accInfo.setRealAccNo("001-01-992323232");
+        accInfo.setRealAccNo("40113387510");
         accInfo.setVtAccNp("123214985324234");
 
         QueryParameter queryParameter = new QueryParameter();

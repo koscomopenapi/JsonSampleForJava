@@ -7,6 +7,7 @@ package org.openapi.balance;
 
 import java.util.Objects;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
 
 /**
@@ -16,6 +17,7 @@ import org.openapi.common.Response;
 public class BalanceResponse {
     
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     BalanceResponseBody balanceResponseBody;
     BalanceList balanceList;
     Response resp;
@@ -23,8 +25,9 @@ public class BalanceResponse {
     public BalanceResponse() {
     }
 
-    public BalanceResponse(CommonHeader commonHeader, BalanceResponseBody balanceResponseBody, BalanceList balanceList, Response resp) {
+    public BalanceResponse(CommonHeader commonHeader, PlatformFields platformFields, BalanceResponseBody balanceResponseBody, BalanceList balanceList, Response resp) {
         this.commonHeader = commonHeader;
+        this.platformFields = platformFields;
         this.balanceResponseBody = balanceResponseBody;
         this.balanceList = balanceList;
         this.resp = resp;
@@ -36,6 +39,14 @@ public class BalanceResponse {
 
     public void setCommonHeader(CommonHeader commonHeader) {
         this.commonHeader = commonHeader;
+    }
+
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
     }
 
     public BalanceResponseBody getBalanceResponseBody() {
@@ -63,47 +74,11 @@ public class BalanceResponse {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.commonHeader);
-        hash = 37 * hash + Objects.hashCode(this.balanceResponseBody);
-        hash = 37 * hash + Objects.hashCode(this.balanceList);
-        hash = 37 * hash + Objects.hashCode(this.resp);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final BalanceResponse other = (BalanceResponse) obj;
-        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
-            return false;
-        }
-        if (!Objects.equals(this.balanceResponseBody, other.balanceResponseBody)) {
-            return false;
-        }
-        if (!Objects.equals(this.balanceList, other.balanceList)) {
-            return false;
-        }
-        if (!Objects.equals(this.resp, other.resp)) {
-            return false;
-        }
-        return true;
-    }
-
-    
-    @Override
     public String toString() {
-        return "BalanceResponse{" + "commonHeader=" + commonHeader + ", balanceResponseBody=" + balanceResponseBody + ", balanceList=" + balanceList + ", resp=" + resp + '}';
+        return "BalanceResponse{" + "commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", balanceResponseBody=" + balanceResponseBody + ", balanceList=" + balanceList + ", resp=" + resp + '}';
     }
+
+
 
     
     

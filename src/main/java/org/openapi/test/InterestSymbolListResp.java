@@ -9,11 +9,13 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
 import org.openapi.symbol.Group;
 import org.openapi.symbol.GroupList;
 import org.openapi.symbol.InterestSymbolListResponse;
 import org.openapi.symbol.InterestSymbolListResponseBody;
+
 /**
  *
  * @author heungjae
@@ -35,12 +37,17 @@ public class InterestSymbolListResp {
         commonHeader.setCertDn("cn=김흥재_0000033643,ou=KOSCOM,ou=LicensedCA,o=SignKorea,c=KR");
         commonHeader.setCi("834f889833602f174a706138f19778a2dc6eee0f834f889833602f174a706138f19778a2dc6eee0feee0f22");
 
+        PlatformFields platformField = new PlatformFields();
+        platformField.setPortalId("khj932");
+        platformField.setApiAccessToken("a308159b-2ab890c8de6");
+        platformField.setApiAccessTokenLifetime("600");
+
         /////////////////////////////////////////////////////
         // AccInfo
         //////////
         AccInfo accInfo = new AccInfo();
-        accInfo.setRealAccNo("XXX-XX-XXXXXXX");
-        accInfo.setVtAccNp("XXX-XX-XXXXXXXXXX-XX-XXXXXXX");
+        accInfo.setRealAccNo("40113387510");
+        accInfo.setVtAccNp("123214985324234");
 
         //////////////////////////////////////////////////////////
         //grouplist
@@ -84,14 +91,14 @@ public class InterestSymbolListResp {
         /////////////////////////////
         InterestSymbolListResponse interestSymbolListResponse = new InterestSymbolListResponse();
         interestSymbolListResponse.setCommonHeader(commonHeader);
+        interestSymbolListResponse.setPlatformFields(platformField);
         InterestSymbolListResponseBody interestSymbolListResponseBody = new InterestSymbolListResponseBody();
-        
+
         interestSymbolListResponseBody.setAccInfo(accInfo);
         interestSymbolListResponseBody.setGroupList(groupList);
         interestSymbolListResponseBody.setResp(resp);
         interestSymbolListResponse.setInterestSymbolListResponseBody(interestSymbolListResponseBody);
-        
-        
+
         Gson gson = new Gson();
         String response = gson.toJson(interestSymbolListResponse);
         System.out.println(response);

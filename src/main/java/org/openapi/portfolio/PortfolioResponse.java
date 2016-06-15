@@ -5,8 +5,8 @@
  */
 package org.openapi.portfolio;
 
-import java.util.Objects;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
 
 /**
@@ -15,11 +15,20 @@ import org.openapi.common.Response;
  */
 public class PortfolioResponse {
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     PortfolioResponseBody portfolioResponseBody;
     PortfolioList portfolioList;
     Response resp;
 
     public PortfolioResponse() {
+    }
+
+    public PortfolioResponse(CommonHeader commonHeader, PlatformFields platformFields, PortfolioResponseBody portfolioResponseBody, PortfolioList portfolioList, Response resp) {
+        this.commonHeader = commonHeader;
+        this.platformFields = platformFields;
+        this.portfolioResponseBody = portfolioResponseBody;
+        this.portfolioList = portfolioList;
+        this.resp = resp;
     }
 
     public CommonHeader getCommonHeader() {
@@ -30,12 +39,20 @@ public class PortfolioResponse {
         this.commonHeader = commonHeader;
     }
 
-    public PortfolioResponseBody getPortfolioRequestBody() {
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
+    }
+
+    public PortfolioResponseBody getPortfolioResponseBody() {
         return portfolioResponseBody;
     }
 
-    public void setPortfolioRequestBody(PortfolioResponseBody portfolioRequestBody) {
-        this.portfolioResponseBody = portfolioRequestBody;
+    public void setPortfolioResponseBody(PortfolioResponseBody portfolioResponseBody) {
+        this.portfolioResponseBody = portfolioResponseBody;
     }
 
     public PortfolioList getPortfolioList() {
@@ -55,46 +72,11 @@ public class PortfolioResponse {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.commonHeader);
-        hash = 97 * hash + Objects.hashCode(this.portfolioResponseBody);
-        hash = 97 * hash + Objects.hashCode(this.portfolioList);
-        hash = 97 * hash + Objects.hashCode(this.resp);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final PortfolioResponse other = (PortfolioResponse) obj;
-        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
-            return false;
-        }
-        if (!Objects.equals(this.portfolioResponseBody, other.portfolioResponseBody)) {
-            return false;
-        }
-        if (!Objects.equals(this.portfolioList, other.portfolioList)) {
-            return false;
-        }
-        if (!Objects.equals(this.resp, other.resp)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "PortfolioResponse{" + "commonHeader=" + commonHeader + ", portfolioResponseBody=" + portfolioResponseBody + ", portfolioList=" + portfolioList + ", resp=" + resp + '}';
+        return "PortfolioResponse{" + "commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", portfolioResponseBody=" + portfolioResponseBody + ", portfolioList=" + portfolioList + ", resp=" + resp + '}';
     }
+
+
 
 
     

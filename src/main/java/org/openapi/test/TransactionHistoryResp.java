@@ -8,6 +8,7 @@ package org.openapi.test;
 import com.google.gson.Gson;
 import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
 import org.openapi.transaction.QueryParameter;
 import org.openapi.transaction.QueryResult;
@@ -36,8 +37,13 @@ public class TransactionHistoryResp {
         commonHeader.setCertDn("cn=김흥재_0000033643,ou=KOSCOM,ou=LicensedCA,o=SignKorea,c=KR");
         commonHeader.setCi("834f889833602f174a706138f19778a2dc6eee0f834f889833602f174a706138f19778a2dc6eee0feee0f22");
 
+        PlatformFields platformField = new PlatformFields();
+        platformField.setPortalId("khj932");
+        platformField.setApiAccessToken("a308159b-2ab890c8de6");
+        platformField.setApiAccessTokenLifetime("600");
+
         AccInfo accInfo = new AccInfo();
-        accInfo.setRealAccNo("001-01-992323232");
+        accInfo.setRealAccNo("40113387510");
         accInfo.setVtAccNp("123214985324234");
 
         QueryResult queryResult = new QueryResult();
@@ -59,7 +65,7 @@ public class TransactionHistoryResp {
         transactionHistoryResponseBody.setQueryResult(queryResult);
 
         TransList transactionList = new TransList();
-        
+
         for (int idx = 1; idx < 6; idx++) {
             Transaction transaction = new Transaction();
             String isinCodeString = String.format("%04d", idx);
@@ -82,6 +88,7 @@ public class TransactionHistoryResp {
 
         TransactionHistoryResponse transactionHistoryResponse = new TransactionHistoryResponse();
         transactionHistoryResponse.setCommonHeader(commonHeader);
+        transactionHistoryResponse.setPlatformFields(platformField);
         transactionHistoryResponse.setTransactionHistoryResponseBody(transactionHistoryResponseBody);
         transactionHistoryResponse.setTransList(transactionList);
 

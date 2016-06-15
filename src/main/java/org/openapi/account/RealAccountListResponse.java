@@ -7,6 +7,7 @@ package org.openapi.account;
 
 import java.util.Objects;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
 
 /**
@@ -15,14 +16,16 @@ import org.openapi.common.Response;
  */
 public class RealAccountListResponse {
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     AccountList accountList;
     Response resp;
 
     public RealAccountListResponse() {
     }
 
-    public RealAccountListResponse(CommonHeader commonHeader, AccountList accList, Response resp) {
+    public RealAccountListResponse(CommonHeader commonHeader, PlatformFields platformFields, AccountList accList, Response resp) {
         this.commonHeader = commonHeader;
+        this.platformFields = platformFields;
         this.accountList = accList;
         this.resp = resp;
     }
@@ -35,12 +38,20 @@ public class RealAccountListResponse {
         this.commonHeader = commonHeader;
     }
 
-    public AccountList getAccList() {
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
+    }
+
+    public AccountList getAccountList() {
         return accountList;
     }
 
-    public void setAccList(AccountList accList) {
-        this.accountList = accList;
+    public void setAccountList(AccountList accountList) {
+        this.accountList = accountList;
     }
 
     public Response getResp() {
@@ -54,9 +65,10 @@ public class RealAccountListResponse {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.commonHeader);
-        hash = 37 * hash + Objects.hashCode(this.accountList);
-        hash = 37 * hash + Objects.hashCode(this.resp);
+        hash = 17 * hash + Objects.hashCode(this.commonHeader);
+        hash = 17 * hash + Objects.hashCode(this.platformFields);
+        hash = 17 * hash + Objects.hashCode(this.accountList);
+        hash = 17 * hash + Objects.hashCode(this.resp);
         return hash;
     }
 
@@ -75,6 +87,9 @@ public class RealAccountListResponse {
         if (!Objects.equals(this.commonHeader, other.commonHeader)) {
             return false;
         }
+        if (!Objects.equals(this.platformFields, other.platformFields)) {
+            return false;
+        }
         if (!Objects.equals(this.accountList, other.accountList)) {
             return false;
         }
@@ -86,9 +101,7 @@ public class RealAccountListResponse {
 
     @Override
     public String toString() {
-        return "RealAccountListResponse{" + "commonHeader=" + commonHeader + ", accList=" + accountList + ", resp=" + resp + '}';
+        return "RealAccountListResponse{" + "commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", accountList=" + accountList + ", resp=" + resp + '}';
     }
-
-
     
 }

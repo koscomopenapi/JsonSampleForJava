@@ -5,8 +5,8 @@
  */
 package org.openapi.account;
 
-import java.util.Objects;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 
 /**
  *
@@ -15,14 +15,16 @@ import org.openapi.common.CommonHeader;
 public class VirtualAccountRequest {
     
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     VirtualAccountList virtualAccountList;
 
     public VirtualAccountRequest() {
     }
 
-    public VirtualAccountRequest(CommonHeader commonHeader, VirtualAccountList body) {
+    public VirtualAccountRequest(CommonHeader commonHeader, PlatformFields platformFields, VirtualAccountList virtualAccountList) {
         this.commonHeader = commonHeader;
-        this.virtualAccountList = body;
+        this.platformFields = platformFields;
+        this.virtualAccountList = virtualAccountList;
     }
 
     public CommonHeader getCommonHeader() {
@@ -33,47 +35,28 @@ public class VirtualAccountRequest {
         this.commonHeader = commonHeader;
     }
 
-    public VirtualAccountList getBody() {
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
+    }
+
+    public VirtualAccountList getVirtualAccountList() {
         return virtualAccountList;
     }
 
-    public void setBody(VirtualAccountList body) {
-        this.virtualAccountList = body;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.commonHeader);
-        hash = 97 * hash + Objects.hashCode(this.virtualAccountList);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final VirtualAccountRequest other = (VirtualAccountRequest) obj;
-        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
-            return false;
-        }
-        if (!Objects.equals(this.virtualAccountList, other.virtualAccountList)) {
-            return false;
-        }
-        return true;
+    public void setVirtualAccountList(VirtualAccountList virtualAccountList) {
+        this.virtualAccountList = virtualAccountList;
     }
 
     @Override
     public String toString() {
-        return "VirtualAccountRequest{" + "commonHeader=" + commonHeader + ", body=" + virtualAccountList + '}';
+        return "VirtualAccountRequest{" + "commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", virtualAccountList=" + virtualAccountList + '}';
     }
+
+ 
     
     
 }

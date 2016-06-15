@@ -5,9 +5,8 @@
  */
 package org.openapi.transaction;
 
-import java.util.Objects;
-import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
+import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
 
 /**
@@ -17,11 +16,20 @@ import org.openapi.common.Response;
 public class TransactionHistoryResponse {
 
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     TransactionHistoryResponseBody transactionHistoryResponseBody;
     TransList transList;
     Response resp;
 
     public TransactionHistoryResponse() {
+    }
+
+    public TransactionHistoryResponse(CommonHeader commonHeader, PlatformFields platformFields, TransactionHistoryResponseBody transactionHistoryResponseBody, TransList transList, Response resp) {
+        this.commonHeader = commonHeader;
+        this.platformFields = platformFields;
+        this.transactionHistoryResponseBody = transactionHistoryResponseBody;
+        this.transList = transList;
+        this.resp = resp;
     }
 
     public CommonHeader getCommonHeader() {
@@ -30,6 +38,14 @@ public class TransactionHistoryResponse {
 
     public void setCommonHeader(CommonHeader commonHeader) {
         this.commonHeader = commonHeader;
+    }
+
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
     }
 
     public TransactionHistoryResponseBody getTransactionHistoryResponseBody() {
@@ -57,46 +73,8 @@ public class TransactionHistoryResponse {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + Objects.hashCode(this.commonHeader);
-        hash = 79 * hash + Objects.hashCode(this.transactionHistoryResponseBody);
-        hash = 79 * hash + Objects.hashCode(this.transList);
-        hash = 79 * hash + Objects.hashCode(this.resp);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final TransactionHistoryResponse other = (TransactionHistoryResponse) obj;
-        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
-            return false;
-        }
-        if (!Objects.equals(this.transactionHistoryResponseBody, other.transactionHistoryResponseBody)) {
-            return false;
-        }
-        if (!Objects.equals(this.transList, other.transList)) {
-            return false;
-        }
-        if (!Objects.equals(this.resp, other.resp)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "TransactionHistoryResponse{" + "commonHeader=" + commonHeader + ", transactionHistoryResponseBody=" + transactionHistoryResponseBody + ", transList=" + transList + ", resp=" + resp + '}';
+        return "TransactionHistoryResponse{" + "commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", transactionHistoryResponseBody=" + transactionHistoryResponseBody + ", transList=" + transList + ", resp=" + resp + '}';
     }
-
 
 }

@@ -9,6 +9,7 @@ import java.util.Objects;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
+import org.openapi.common.PlatformFields;
 
 
 /**
@@ -18,19 +19,22 @@ import org.openapi.common.Partner;
 public class BalanceRequest {
     Partner partner;
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     DevInfo devInfo;
     PortfolioRequestBody balanceRequestBody;
 
     public BalanceRequest() {
     }
 
-    public BalanceRequest(Partner partner, CommonHeader commonHeader, DevInfo DevInfo, PortfolioRequestBody balanceRequestBody) {
+    public BalanceRequest(Partner partner, CommonHeader commonHeader, PlatformFields platformFields, DevInfo devInfo, PortfolioRequestBody balanceRequestBody) {
         this.partner = partner;
         this.commonHeader = commonHeader;
-        this.devInfo = DevInfo;
+        this.platformFields = platformFields;
+        this.devInfo = devInfo;
         this.balanceRequestBody = balanceRequestBody;
     }
 
+    
     public Partner getPartner() {
         return partner;
     }
@@ -47,61 +51,36 @@ public class BalanceRequest {
         this.commonHeader = commonHeader;
     }
 
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
+    }
+
     public DevInfo getDevInfo() {
         return devInfo;
     }
 
-    public void setDevInfo(DevInfo DevInfo) {
-        this.devInfo = DevInfo;
+    public void setDevInfo(DevInfo devInfo) {
+        this.devInfo = devInfo;
     }
 
-    public PortfolioRequestBody getPortfolioRequestBody() {
+    public PortfolioRequestBody getBalanceRequestBody() {
         return balanceRequestBody;
     }
 
-    public void setPortfolioRequestBody(PortfolioRequestBody portfolioRequestBody) {
-        this.balanceRequestBody = portfolioRequestBody;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 19 * hash + Objects.hashCode(this.partner);
-        hash = 19 * hash + Objects.hashCode(this.commonHeader);
-        hash = 19 * hash + Objects.hashCode(this.devInfo);
-        hash = 19 * hash + Objects.hashCode(this.balanceRequestBody);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final BalanceRequest other = (BalanceRequest) obj;
-        if (!Objects.equals(this.partner, other.partner)) {
-            return false;
-        }
-        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
-            return false;
-        }
-        if (!Objects.equals(this.devInfo, other.devInfo)) {
-            return false;
-        }
-        return Objects.equals(this.balanceRequestBody, other.balanceRequestBody);
+    public void setBalanceRequestBody(PortfolioRequestBody balanceRequestBody) {
+        this.balanceRequestBody = balanceRequestBody;
     }
 
     @Override
     public String toString() {
-        return "BalanceRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", DevInfo=" + devInfo + ", balanceRequestBody=" + balanceRequestBody + '}';
+        return "BalanceRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", devInfo=" + devInfo + ", balanceRequestBody=" + balanceRequestBody + '}';
     }
-    
+
+
     
         
 }

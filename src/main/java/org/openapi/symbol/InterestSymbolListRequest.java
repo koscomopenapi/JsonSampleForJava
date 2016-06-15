@@ -5,10 +5,10 @@
  */
 package org.openapi.symbol;
 
-import java.util.Objects;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
+import org.openapi.common.PlatformFields;
 
 /**
  *
@@ -18,10 +18,19 @@ public class InterestSymbolListRequest {
 
     Partner partner;
     CommonHeader commonHeader;
+    PlatformFields platformFields;   //option
     DevInfo devInfo;
     private InterestSymbolListRequestBody interestSymbolListRequestBody;
 
     public InterestSymbolListRequest() {
+    }
+
+    public InterestSymbolListRequest(Partner partner, CommonHeader commonHeader, PlatformFields platformFields, DevInfo devInfo, InterestSymbolListRequestBody interestSymbolListRequestBody) {
+        this.partner = partner;
+        this.commonHeader = commonHeader;
+        this.platformFields = platformFields;
+        this.devInfo = devInfo;
+        this.interestSymbolListRequestBody = interestSymbolListRequestBody;
     }
 
     public Partner getPartner() {
@@ -38,6 +47,14 @@ public class InterestSymbolListRequest {
 
     public void setCommonHeader(CommonHeader commonHeader) {
         this.commonHeader = commonHeader;
+    }
+
+    public PlatformFields getPlatformFields() {
+        return platformFields;
+    }
+
+    public void setPlatformFields(PlatformFields platformFields) {
+        this.platformFields = platformFields;
     }
 
     public DevInfo getDevInfo() {
@@ -57,46 +74,11 @@ public class InterestSymbolListRequest {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.partner);
-        hash = 29 * hash + Objects.hashCode(this.commonHeader);
-        hash = 29 * hash + Objects.hashCode(this.devInfo);
-        hash = 29 * hash + Objects.hashCode(this.interestSymbolListRequestBody);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final InterestSymbolListRequest other = (InterestSymbolListRequest) obj;
-        if (!Objects.equals(this.partner, other.partner)) {
-            return false;
-        }
-        if (!Objects.equals(this.commonHeader, other.commonHeader)) {
-            return false;
-        }
-        if (!Objects.equals(this.devInfo, other.devInfo)) {
-            return false;
-        }
-        if (!Objects.equals(this.interestSymbolListRequestBody, other.interestSymbolListRequestBody)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "InterestSymbolListRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", devInfo=" + devInfo + ", interestSymbolListRequestBody=" + interestSymbolListRequestBody + '}';
+        return "InterestSymbolListRequest{" + "partner=" + partner + ", commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", devInfo=" + devInfo + ", interestSymbolListRequestBody=" + interestSymbolListRequestBody + '}';
     }
+
+    
 
 
 
