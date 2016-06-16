@@ -42,7 +42,7 @@ public class VirtualAccountResp {
         VirtualAccountResponseList virtualAccountResponseList = new VirtualAccountResponseList();
         VirtualAccountAck virtualAccountAck = new VirtualAccountAck();
         virtualAccountAck.setTrCode("REQ");
-        virtualAccountAck.setRealAccNo("001-99-23122221");
+        virtualAccountAck.setRealAccNo("0019923122221");
         virtualAccountAck.setVtAccNo("0929923212342");
         virtualAccountAck.setVtAccAlias("유가증권투자용");
         virtualAccountAck.setStatus("SUCCESS");

@@ -20,6 +20,7 @@ import org.openapi.portfolio.PortfolioList;
 import org.openapi.portfolio.PortfolioResponseBody;
 import org.openapi.portfolio.asset.Amount;
 import org.openapi.portfolio.asset.Cash;
+import org.openapi.transaction.QueryResult;
 
 /**
  *
@@ -51,13 +52,20 @@ public class PortfolioResp {
         accInfo.setRealAccNo("40113387510");
         accInfo.setVtAccNp("123214985324234");
         portfolioResponseBody.setAccInfo(accInfo);
-
+        
+        QueryResult queryResult = new QueryResult();
+        queryResult.setTotalCnt(3);
+        queryResult.setCount(3);
+        queryResult.setPage("");
+        
         QueryType queryType = new QueryType();
         queryType.setRspType("RAT");
         queryType.setAssetType("ALL");
         queryType.setCount(0);
         queryType.setPage("null");
         portfolioResponseBody.setQueryType(queryType);
+        portfolioResponseBody.setQueryResult(queryResult);
+
 
         Amount amount = new Amount();
         amount.setAmt(20000.0);
@@ -73,7 +81,7 @@ public class PortfolioResp {
         fund.setFundName("Eastspring Investments Japan Dynamic Equity Fund Class");
         fund.setQty(200.0);
         fund.setEarningRate(12.3);
-        fund.setMaturity("9999-99-99");
+        fund.setMaturity("99999999");
 
         FundList fundList = new FundList();
         fundList.addAsset(fund);

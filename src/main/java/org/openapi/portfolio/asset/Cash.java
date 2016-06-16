@@ -10,26 +10,26 @@ package org.openapi.portfolio.asset;
  * @author heungjae
  */
 public class Cash {
-    Amount amount;
+    Amount cash;
 
     public Cash() {
     }
 
     public Cash(Amount amount) {
-        this.amount = amount;
+        this.cash = amount;
     }
 
     public Amount getAmount() {
-        return amount;
+        return cash;
     }
 
     public void setAmount(Amount amount) {
-        this.amount = amount;
+        this.cash = amount;
     }
 
     @Override
     public String toString() {
-        return "Cash{" + "amount=" + amount + '}';
+        return "Cash{" + "amount=" + cash + '}';
     }
     
     

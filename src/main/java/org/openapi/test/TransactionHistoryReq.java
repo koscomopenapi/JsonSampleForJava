@@ -51,8 +51,8 @@ public class TransactionHistoryReq {
         accInfo.setVtAccNp("123214985324234");
 
         QueryParams queryParams = new QueryParams();
-        queryParams.setFromDate("2016-01-03");
-        queryParams.setToDate("2016-03-01");
+        queryParams.setFromDate("20160103");
+        queryParams.setToDate("20160301");
         queryParams.setIsinCode("KR7005930003");
         queryParams.setSide("BID");
         queryParams.setCount(50);

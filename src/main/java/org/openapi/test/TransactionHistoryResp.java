@@ -52,8 +52,8 @@ public class TransactionHistoryResp {
         queryResult.setPage("P12231112");
 
         QueryParams queryParameter = new QueryParams();
-        queryParameter.setFromDate("2016-01-03");
-        queryParameter.setToDate("2016-03-03");
+        queryParameter.setFromDate("20160103");
+        queryParameter.setToDate("20160303");
         queryParameter.setIsinCode("KR7005930003");
         queryParameter.setSide("BID");
         queryParameter.setCount(0);
@@ -71,7 +71,7 @@ public class TransactionHistoryResp {
             String isinCodeString = String.format("%04d", idx);
             transaction.setIsinCode("KR700593" + isinCodeString);
             String dateTail = String.format("%02d", idx);
-            transaction.setTransDate("2016-02-" + dateTail);
+            transaction.setTransDate("201602" + dateTail);
             transaction.setTransType("BID");
             transaction.setChangeAmt(1500000);
             transaction.setChangeQty(1);

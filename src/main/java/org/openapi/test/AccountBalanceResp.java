@@ -101,9 +101,9 @@ public class AccountBalanceResp {
         fundBalance.setValAtTrade(9200000);
         fundBalance.setValAtCur(9200000);
         fundBalance.setProLoss(0);
-        fundBalance.setFirstDateBuy("2016-01-03");
-        fundBalance.setLastDateBuy("2016-01-03");
-        fundBalance.setMaturity("9999-99-99");
+        fundBalance.setFirstDateBuy("20160103");
+        fundBalance.setLastDateBuy("20160103");
+        fundBalance.setMaturity("99999999");
         fundBalance.setEarningRate(0);
         fundList.addAsset(fundBalance);
 
