@@ -11,7 +11,7 @@ import org.openapi.common.CommonHeader;
 import org.openapi.common.DevInfo;
 import org.openapi.common.Partner;
 import org.openapi.common.PlatformFields;
-import org.openapi.transaction.QueryParameter;
+import org.openapi.transaction.QueryParams;
 import org.openapi.transaction.TransactionHistoryRequest;
 import org.openapi.transaction.TransactionHistoryRequestBody;
 
@@ -50,17 +50,17 @@ public class TransactionHistoryReq {
         accInfo.setRealAccNo("40113387510");
         accInfo.setVtAccNp("123214985324234");
 
-        QueryParameter queryParameter = new QueryParameter();
-        queryParameter.setFromDate("2016-01-03");
-        queryParameter.setToDate("2016-03-01");
-        queryParameter.setIsinCode("KR7005930003");
-        queryParameter.setSide("BID");
-        queryParameter.setCount(50);
-        queryParameter.setPage(0);
+        QueryParams queryParams = new QueryParams();
+        queryParams.setFromDate("2016-01-03");
+        queryParams.setToDate("2016-03-01");
+        queryParams.setIsinCode("KR7005930003");
+        queryParams.setSide("BID");
+        queryParams.setCount(50);
+        queryParams.setPage("null");
 
         TransactionHistoryRequestBody transactionHistoryRequestBody = new TransactionHistoryRequestBody();
         transactionHistoryRequestBody.setAccInfo(accInfo);
-        transactionHistoryRequestBody.setQueryParameter(queryParameter);
+        transactionHistoryRequestBody.setQueryParameter(queryParams);
 
         TransactionHistoryRequest TransactionHistoryRequest = new TransactionHistoryRequest();
         TransactionHistoryRequest.setPartner(partner);

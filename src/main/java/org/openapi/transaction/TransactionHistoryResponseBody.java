@@ -39,12 +39,12 @@ public class TransactionHistoryResponseBody extends TransactionHistoryRequestBod
         this.accInfo = accInfo;
     }
 
-    public QueryParameter getQueryParameter() {
-        return queryParameter;
+    public QueryParams getQueryParameter() {
+        return queryParams;
     }
 
-    public void setQueryParameter(QueryParameter queryParameter) {
-        this.queryParameter = queryParameter;
+    public void setQueryParameter(QueryParams queryParameter) {
+        this.queryParams = queryParameter;
     }
 
     @Override

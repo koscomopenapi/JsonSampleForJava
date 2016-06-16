@@ -10,7 +10,7 @@ import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.PlatformFields;
 import org.openapi.common.Response;
-import org.openapi.transaction.QueryParameter;
+import org.openapi.transaction.QueryParams;
 import org.openapi.transaction.QueryResult;
 import org.openapi.transaction.TransList;
 import org.openapi.transaction.Transaction;
@@ -49,15 +49,15 @@ public class TransactionHistoryResp {
         QueryResult queryResult = new QueryResult();
         queryResult.setTotalCnt(1);
         queryResult.setCount(1);
-        queryResult.setPage("null");
+        queryResult.setPage("P12231112");
 
-        QueryParameter queryParameter = new QueryParameter();
+        QueryParams queryParameter = new QueryParams();
         queryParameter.setFromDate("2016-01-03");
         queryParameter.setToDate("2016-03-03");
         queryParameter.setIsinCode("KR7005930003");
         queryParameter.setSide("BID");
         queryParameter.setCount(0);
-        queryParameter.setPage(0);
+        queryParameter.setPage("null");
 
         TransactionHistoryResponseBody transactionHistoryResponseBody = new TransactionHistoryResponseBody();
         transactionHistoryResponseBody.setAccInfo(accInfo);

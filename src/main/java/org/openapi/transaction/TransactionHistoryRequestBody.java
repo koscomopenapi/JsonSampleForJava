@@ -15,7 +15,7 @@ import org.openapi.common.AccInfo;
 public class TransactionHistoryRequestBody {
 
     AccInfo accInfo;
-    QueryParameter queryParameter;
+    QueryParams queryParams;
 
     public AccInfo getAccInfo() {
         return accInfo;
@@ -25,19 +25,19 @@ public class TransactionHistoryRequestBody {
         this.accInfo = accInfo;
     }
 
-    public QueryParameter getQueryParameter() {
-        return queryParameter;
+    public QueryParams getQueryParameter() {
+        return queryParams;
     }
 
-    public void setQueryParameter(QueryParameter queryParameter) {
-        this.queryParameter = queryParameter;
+    public void setQueryParameter(QueryParams queryParameter) {
+        this.queryParams = queryParameter;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 17 * hash + Objects.hashCode(this.accInfo);
-        hash = 17 * hash + Objects.hashCode(this.queryParameter);
+        hash = 17 * hash + Objects.hashCode(this.queryParams);
         return hash;
     }
 
@@ -56,7 +56,7 @@ public class TransactionHistoryRequestBody {
         if (!Objects.equals(this.accInfo, other.accInfo)) {
             return false;
         }
-        if (!Objects.equals(this.queryParameter, other.queryParameter)) {
+        if (!Objects.equals(this.queryParams, other.queryParams)) {
             return false;
         }
         return true;
@@ -64,7 +64,7 @@ public class TransactionHistoryRequestBody {
 
     @Override
     public String toString() {
-        return "TransactionHistoryRequestBody{" + "accInfo=" + accInfo + ", queryParameter=" + queryParameter + '}';
+        return "TransactionHistoryRequestBody{" + "accInfo=" + accInfo + ", queryParameter=" + queryParams + '}';
     }
 
 
