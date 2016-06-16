@@ -13,7 +13,7 @@ public class BalanceSummary {
     double cashBalance;
     double d1;
     double d2;
-    double substiture;
+    double substitute;
     double receivable;
     double subsMargin;
     double loanCredit;
@@ -30,7 +30,7 @@ public class BalanceSummary {
         this.cashBalance = cashBalance;
         this.d1 = d1;
         this.d2 = d2;
-        this.substiture = substiture;
+        this.substitute = substiture;
         this.receivable = receivable;
         this.subsMargin = subsMargin;
         this.loanCredit = loanCredit;
@@ -66,11 +66,11 @@ public class BalanceSummary {
     }
 
     public double getSubstiture() {
-        return substiture;
+        return substitute;
     }
 
     public void setSubstiture(double substiture) {
-        this.substiture = substiture;
+        this.substitute = substiture;
     }
 
     public double getReceivable() {
@@ -143,7 +143,7 @@ public class BalanceSummary {
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.cashBalance) ^ (Double.doubleToLongBits(this.cashBalance) >>> 32));
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.d1) ^ (Double.doubleToLongBits(this.d1) >>> 32));
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.d2) ^ (Double.doubleToLongBits(this.d2) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.substiture) ^ (Double.doubleToLongBits(this.substiture) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.substitute) ^ (Double.doubleToLongBits(this.substitute) >>> 32));
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.receivable) ^ (Double.doubleToLongBits(this.receivable) >>> 32));
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.subsMargin) ^ (Double.doubleToLongBits(this.subsMargin) >>> 32));
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.loanCredit) ^ (Double.doubleToLongBits(this.loanCredit) >>> 32));
@@ -176,7 +176,7 @@ public class BalanceSummary {
         if (Double.doubleToLongBits(this.d2) != Double.doubleToLongBits(other.d2)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.substiture) != Double.doubleToLongBits(other.substiture)) {
+        if (Double.doubleToLongBits(this.substitute) != Double.doubleToLongBits(other.substitute)) {
             return false;
         }
         if (Double.doubleToLongBits(this.receivable) != Double.doubleToLongBits(other.receivable)) {
@@ -208,7 +208,7 @@ public class BalanceSummary {
 
     @Override
     public String toString() {
-        return "BalanceSummary{" + "cashBalance=" + cashBalance + ", d1=" + d1 + ", d2=" + d2 + ", substiture=" + substiture + ", receivable=" + receivable + ", subsMargin=" + subsMargin + ", loanCredit=" + loanCredit + ", valAtTrade=" + valAtTrade + ", valueAtCur=" + valueAtCur + ", proLoss=" + proLoss + ", totalAccVal=" + totalAccVal + ", cashAvWithdraw=" + cashAvWithdraw + '}';
+        return "BalanceSummary{" + "cashBalance=" + cashBalance + ", d1=" + d1 + ", d2=" + d2 + ", substiture=" + substitute + ", receivable=" + receivable + ", subsMargin=" + subsMargin + ", loanCredit=" + loanCredit + ", valAtTrade=" + valAtTrade + ", valueAtCur=" + valueAtCur + ", proLoss=" + proLoss + ", totalAccVal=" + totalAccVal + ", cashAvWithdraw=" + cashAvWithdraw + '}';
     }
 
     

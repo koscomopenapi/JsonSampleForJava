@@ -5,58 +5,32 @@
  */
 package org.openapi.portfolio.asset;
 
-import java.util.Objects;
-
 /**
  *
  * @author heungjae
  */
 public class Cash {
-    Double amt;
+    Amount amount;
 
     public Cash() {
     }
 
-    public Cash(Double amt) {
-        this.amt = amt;
+    public Cash(Amount amount) {
+        this.amount = amount;
     }
 
-    public Double getAmt() {
-        return amt;
+    public Amount getAmount() {
+        return amount;
     }
 
-    public void setAmt(Double amt) {
-        this.amt = amt;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.amt);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Cash other = (Cash) obj;
-        if (!Objects.equals(this.amt, other.amt)) {
-            return false;
-        }
-        return true;
+    public void setAmount(Amount amount) {
+        this.amount = amount;
     }
 
     @Override
     public String toString() {
-        return "Cash{" + "amt=" + amt + '}';
+        return "Cash{" + "amount=" + amount + '}';
     }
+    
     
 }

@@ -18,6 +18,8 @@ import org.openapi.portfolio.asset.EquityList;
 import org.openapi.portfolio.asset.FundList;
 import org.openapi.portfolio.PortfolioList;
 import org.openapi.portfolio.PortfolioResponseBody;
+import org.openapi.portfolio.asset.Amount;
+import org.openapi.portfolio.asset.Cash;
 
 /**
  *
@@ -57,6 +59,9 @@ public class PortfolioResp {
         queryType.setPage("null");
         portfolioResponseBody.setQueryType(queryType);
 
+        Amount amount = new Amount();
+        amount.setAmt(20000.0);
+        Cash cash = new Cash(amount);
         Equity equity = new Equity();
         equity.setAssetType("KSP");
         equity.setIsinCode("KR7005930003");
@@ -79,6 +84,7 @@ public class PortfolioResp {
 //        EtcList etcList = new EtcList();
 //        etcList.addPortfolio(etc);
         PortfolioList portfolio = new PortfolioList();
+        portfolio.addPortfolio(cash);
         portfolio.addPortfolio(equityList);
         portfolio.addPortfolio(fundList);
 

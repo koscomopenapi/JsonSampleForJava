@@ -31,6 +31,10 @@ public class BalanceList {
         balance.add(objet);
     } 
 
+    public Object getBalance(int idx) {
+        return balance.get(idx);
+    } 
+    
     @Override
     public int hashCode() {
         int hash = 5;
