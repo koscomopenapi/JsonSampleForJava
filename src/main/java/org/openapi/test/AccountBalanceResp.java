@@ -9,8 +9,10 @@ import com.google.gson.Gson;
 import org.openapi.balance.BalanceList;
 import org.openapi.balance.BalanceResponse;
 import org.openapi.balance.BalanceResponseBody;
+import org.openapi.balance.BalanceSummary;
 import org.openapi.balance.EquityBalance;
 import org.openapi.balance.FundBalance;
+import org.openapi.balance.Summary;
 import org.openapi.common.AccInfo;
 import org.openapi.common.CommonHeader;
 import org.openapi.common.PlatformFields;
@@ -62,6 +64,24 @@ public class AccountBalanceResp {
         queryResult.setCount(1);
         queryResult.setPage("null");
         balanceResponseBody.setQueryResult(queryResult);
+        
+        BalanceSummary balanceSummary = new BalanceSummary();
+        balanceSummary.setCashBalance(1290000.0);
+        balanceSummary.setD1(1290000.0);
+        balanceSummary.setD2(1290000.0);
+        balanceSummary.setSubstiture(8290000.0);
+        balanceSummary.setReceivable(0);
+        balanceSummary.setSubsMargin(0);
+        balanceSummary.setLoanCredit(0);
+        balanceSummary.setValAtTrade(1290000.0);
+        balanceSummary.setValueAtCur(1290000.0);
+        balanceSummary.setProLoss(10000.0);
+        balanceSummary.setTotalAccVal(1290000.0);
+        balanceSummary.setCashAvWithdraw(1000);
+        
+        Summary summary = new Summary();
+        summary.setSummary(balanceSummary);
+        
 
         EquityList equityList = new EquityList();
         EquityBalance equityBalance = new EquityBalance();
@@ -88,6 +108,7 @@ public class AccountBalanceResp {
         fundList.addAsset(fundBalance);
 
         BalanceList balanceList = new BalanceList();
+        balanceList.addBalance(summary);
         balanceList.addBalance(equityList);
         balanceList.addBalance(fundList);
 
