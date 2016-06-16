@@ -66,6 +66,7 @@ public class TransactionHistoryReq {
         TransactionHistoryRequest.setPartner(partner);
         TransactionHistoryRequest.setDevInfo(devInfo);
         TransactionHistoryRequest.setCommonHeader(commonHeader);
+        TransactionHistoryRequest.setPlatformFields(platformField);
         TransactionHistoryRequest.setTransactionHistoryRequestBody(transactionHistoryRequestBody);
 
         Gson gson = new Gson();
