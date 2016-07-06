@@ -15,15 +15,15 @@ import org.openapi.common.PlatformFields;
 public class InterestSymbolListResponse {
     CommonHeader commonHeader;
     PlatformFields platformFields;   //option
-    InterestSymbolListResponseBody InterestSymbolListResponseBody;
+    InterestSymbolListResponseBody interestSymbolListResponseBody;
 
     public InterestSymbolListResponse() {
     }
 
-    public InterestSymbolListResponse(CommonHeader commonHeader, PlatformFields platformFields, InterestSymbolListResponseBody InterestSymbolListResponseBody) {
+    public InterestSymbolListResponse(CommonHeader commonHeader, PlatformFields platformFields, InterestSymbolListResponseBody interestSymbolListResponseBody) {
         this.commonHeader = commonHeader;
         this.platformFields = platformFields;
-        this.InterestSymbolListResponseBody = InterestSymbolListResponseBody;
+        this.interestSymbolListResponseBody = interestSymbolListResponseBody;
     }
 
     
@@ -44,16 +44,16 @@ public class InterestSymbolListResponse {
     }
 
     public InterestSymbolListResponseBody getInterestSymbolListResponseBody() {
-        return InterestSymbolListResponseBody;
+        return interestSymbolListResponseBody;
     }
 
     public void setInterestSymbolListResponseBody(InterestSymbolListResponseBody InterestSymbolListResponseBody) {
-        this.InterestSymbolListResponseBody = InterestSymbolListResponseBody;
+        this.interestSymbolListResponseBody = InterestSymbolListResponseBody;
     }
 
     @Override
     public String toString() {
-        return "InterestSymbolListResponse{" + "commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", InterestSymbolListResponseBody=" + InterestSymbolListResponseBody + '}';
+        return "InterestSymbolListResponse{" + "commonHeader=" + commonHeader + ", platformFields=" + platformFields + ", InterestSymbolListResponseBody=" + interestSymbolListResponseBody + '}';
     }
 
 
