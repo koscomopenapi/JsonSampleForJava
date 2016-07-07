@@ -5,11 +5,13 @@
  */
 package org.openapi.balance;
 
+import org.openapi.portfolio.asset.Etc;
+
 /**
  *
  * @author heungjae
  */
-public class EtcBalance {
+public class EtcBalance extends Etc {
     double valAtTrade;
     double valAtCur;
     String tradeType;
