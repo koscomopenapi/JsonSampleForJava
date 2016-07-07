@@ -87,6 +87,7 @@ public class AccountBalanceResp {
         EquityBalance equityBalance = new EquityBalance();
         equityBalance.setAssetType("KSP");
         equityBalance.setIsinCode("KR7005930003");
+        equityBalance.setTradeType("NRM");
         equityBalance.setQty(10);
         equityBalance.setValAtTrade(16500000);
         equityBalance.setValAtCur(21000000);
