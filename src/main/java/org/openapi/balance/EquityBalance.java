@@ -5,6 +5,7 @@
  */
 package org.openapi.balance;
 
+import java.util.Objects;
 import org.openapi.portfolio.asset.Equity;
 
 /**
@@ -16,24 +17,27 @@ public class EquityBalance extends Equity {
     double valAtTrade;
     double valAtCur;
     double proLoss;
+    String tradeType;
 
     public EquityBalance() {
     }
 
-    
-    public EquityBalance(double valAtTrade, double valAtCur, double proLoss) {
+    public EquityBalance(double valAtTrade, double valAtCur, double proLoss, String tradeType) {
         this.valAtTrade = valAtTrade;
         this.valAtCur = valAtCur;
         this.proLoss = proLoss;
+        this.tradeType = tradeType;
     }
 
-    public EquityBalance(double valAtTrade, double valAtCur, double proLoss, String assetType, String isinCode, double qty, double earningRate) {
+    public EquityBalance(double valAtTrade, double valAtCur, double proLoss, String tradeType, String assetType, String isinCode, double qty, double earningRate) {
         super(assetType, isinCode, qty, earningRate);
         this.valAtTrade = valAtTrade;
         this.valAtCur = valAtCur;
         this.proLoss = proLoss;
+        this.tradeType = tradeType;
     }
 
+    
     public double getValAtTrade() {
         return valAtTrade;
     }
@@ -58,12 +62,21 @@ public class EquityBalance extends Equity {
         this.proLoss = proLoss;
     }
 
+    public String getTradeType() {
+        return tradeType;
+    }
+
+    public void setTradeType(String tradeType) {
+        this.tradeType = tradeType;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.valAtTrade) ^ (Double.doubleToLongBits(this.valAtTrade) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.valAtCur) ^ (Double.doubleToLongBits(this.valAtCur) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.proLoss) ^ (Double.doubleToLongBits(this.proLoss) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.valAtTrade) ^ (Double.doubleToLongBits(this.valAtTrade) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.valAtCur) ^ (Double.doubleToLongBits(this.valAtCur) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.proLoss) ^ (Double.doubleToLongBits(this.proLoss) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.tradeType);
         return hash;
     }
 
@@ -88,13 +101,17 @@ public class EquityBalance extends Equity {
         if (Double.doubleToLongBits(this.proLoss) != Double.doubleToLongBits(other.proLoss)) {
             return false;
         }
+        if (!Objects.equals(this.tradeType, other.tradeType)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "EquityBalance{" + "valAtTrade=" + valAtTrade + ", valAtCur=" + valAtCur + ", proLoss=" + proLoss + '}';
+        return "EquityBalance{" + "valAtTrade=" + valAtTrade + ", valAtCur=" + valAtCur + ", proLoss=" + proLoss + ", tradeType=" + tradeType + '}';
     }
-    
+
+
     
 }
