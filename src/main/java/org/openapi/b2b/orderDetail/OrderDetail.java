@@ -2,6 +2,7 @@ package org.openapi.b2b.orderDetail;
 
 import java.util.ArrayList;
 
+import org.openapi.b2b.balanceList.Balance;
 import org.openapi.b2b.common.IsinInfo;
 
 public class OrderDetail {
@@ -27,6 +28,14 @@ public class OrderDetail {
 	private String orderRejectReason;
 	private ArrayList<IsinInfo> isinInfo = new ArrayList<IsinInfo>();
 	private ArrayList<ExecList> execList = new ArrayList<ExecList>();
+	
+	public void addIsinInfo(IsinInfo isinInfo) {
+        this.isinInfo.add(isinInfo);
+	}
+
+	public void addExecList(ExecList execList) {
+        this.execList.add(execList);
+	}
 	
 	public OrderDetail() {
 		super();

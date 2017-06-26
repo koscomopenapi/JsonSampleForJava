@@ -2,6 +2,7 @@ package org.openapi.b2b.settleList;
 
 import java.util.ArrayList;
 
+import org.openapi.b2b.balanceList.Balance;
 import org.openapi.b2b.common.CostInfo;
 import org.openapi.b2b.common.IsinInfo;
 
@@ -22,6 +23,14 @@ public class SettleInfo {
 	private double costTotal;
 	private ArrayList<IsinInfo> isinInfo = new ArrayList<IsinInfo>();
 	private ArrayList<CostInfo> costInfo = new ArrayList<CostInfo>();
+	
+	public void addIsinInfo(IsinInfo isinInfo) {
+        this.isinInfo.add(isinInfo);
+	}
+	public void addCostInfo(CostInfo costInfo) {
+        this.costInfo.add(costInfo);
+	}
+	
 	public SettleInfo() {
 		super();
 		// TODO Auto-generated constructor stub

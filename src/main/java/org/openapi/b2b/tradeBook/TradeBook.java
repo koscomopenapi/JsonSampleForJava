@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openapi.b2b.common.CostInfo;
 import org.openapi.b2b.common.IsinInfo;
+import org.openapi.b2b.settleList.SettleInfo;
 
 public class TradeBook {
 	private List<IsinInfo> isinType = new ArrayList<IsinInfo>();
@@ -24,6 +25,14 @@ public class TradeBook {
 	
 	private String subject;
 	private String summary;
+	
+	public void addIsinInfo(IsinInfo isinType) {
+        this.isinType.add(isinType);
+	}
+	public void addCostInfo(CostInfo costInfo) {
+        this.costInfo.add(costInfo);
+	}
+	
 	public TradeBook() {
 		super();
 		// TODO Auto-generated constructor stub
