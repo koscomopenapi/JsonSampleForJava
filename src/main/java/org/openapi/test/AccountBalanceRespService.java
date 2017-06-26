@@ -23,7 +23,7 @@ public class AccountBalanceRespService {
 "";
         Gson gson = new Gson();
         BalanceRequest accountBalanceRequest = gson.fromJson(jsonMsg,BalanceRequest.class);
-        System.out.println(accountBalanceRequest.getPortfolioRequestBody().getAccInfo());
+        System.out.println(accountBalanceRequest.getBalanceRequestBody().getAccInfo());
         System.out.println(accountBalanceRequest.getCommonHeader().getCertDn());
     }
     
