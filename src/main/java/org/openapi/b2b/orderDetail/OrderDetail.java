@@ -29,13 +29,12 @@ public class OrderDetail {
 	private ArrayList<IsinInfo> isinInfo = new ArrayList<IsinInfo>();
 	private ArrayList<ExecList> execList = new ArrayList<ExecList>();
 	
-	public void addIsinInfo(IsinInfo isinInfo) {
-        this.isinInfo.add(isinInfo);
-	}
-
-	public void addExecList(ExecList execList) {
-        this.execList.add(execList);
-	}
+	 public void addIsinInfo(IsinInfo isinInfo) {
+	        this.isinInfo.add(isinInfo);
+	 }
+	 public void addExecList(ExecList execList) {
+	        this.execList.add(execList);
+	 }
 	
 	public OrderDetail() {
 		super();

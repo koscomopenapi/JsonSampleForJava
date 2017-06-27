@@ -2,8 +2,6 @@ package org.openapi.b2b.settleList;
 
 import java.util.ArrayList;
 
-import org.openapi.b2b.accountList.Account;
-
 public class SettleList {
 	ArrayList<SettleInfo> settleInfo = new ArrayList<SettleInfo>();
 	

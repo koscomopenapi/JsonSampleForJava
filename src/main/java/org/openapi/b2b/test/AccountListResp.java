@@ -59,8 +59,8 @@ public class AccountListResp {
 		accountListResponse.setResp(resp);
 		
 		Gson gson = new Gson();
-		String request = gson.toJson(accountListResponse);
-		System.out.println(request);		
+		String response = gson.toJson(accountListResponse);
+		System.out.println(response);		
 		
 	}
 }

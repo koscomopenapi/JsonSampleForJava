@@ -2,7 +2,6 @@ package org.openapi.b2b.settleList;
 
 import java.util.ArrayList;
 
-import org.openapi.b2b.balanceList.Balance;
 import org.openapi.b2b.common.CostInfo;
 import org.openapi.b2b.common.IsinInfo;
 

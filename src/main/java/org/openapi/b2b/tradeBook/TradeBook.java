@@ -5,10 +5,9 @@ import java.util.List;
 
 import org.openapi.b2b.common.CostInfo;
 import org.openapi.b2b.common.IsinInfo;
-import org.openapi.b2b.settleList.SettleInfo;
 
 public class TradeBook {
-	private List<IsinInfo> isinType = new ArrayList<IsinInfo>();
+	private List<IsinInfo> isinInfo = new ArrayList<IsinInfo>();
 	private List<CostInfo> costInfo = new ArrayList<CostInfo>();
 	
 	private String accNo;
@@ -26,22 +25,24 @@ public class TradeBook {
 	private String subject;
 	private String summary;
 	
-	public void addIsinInfo(IsinInfo isinType) {
-        this.isinType.add(isinType);
+	public void addIsinInfo(IsinInfo isinInfo) {
+        this.isinInfo.add(isinInfo);
 	}
+
 	public void addCostInfo(CostInfo costInfo) {
         this.costInfo.add(costInfo);
 	}
+
 	
 	public TradeBook() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public TradeBook(List<IsinInfo> isinType, List<CostInfo> costInfo, String accNo, String accName, String transDate,
+	public TradeBook(List<IsinInfo> isinInfo, List<CostInfo> costInfo, String accNo, String accName, String transDate,
 			String transType, double changeAmt, double changeQty, double qty, double amt, String exchange,
 			String crcyCode, String subject, String summary) {
 		super();
-		this.isinType = isinType;
+		this.isinInfo = isinInfo;
 		this.costInfo = costInfo;
 		this.accNo = accNo;
 		this.accName = accName;
@@ -56,11 +57,11 @@ public class TradeBook {
 		this.subject = subject;
 		this.summary = summary;
 	}
-	public List<IsinInfo> getIsinType() {
-		return isinType;
+	public List<IsinInfo> getisinInfo() {
+		return isinInfo;
 	}
-	public void setIsinType(List<IsinInfo> isinType) {
-		this.isinType = isinType;
+	public void setisinInfo(List<IsinInfo> isinInfo) {
+		this.isinInfo = isinInfo;
 	}
 	public List<CostInfo> getCostInfo() {
 		return costInfo;
@@ -156,7 +157,7 @@ public class TradeBook {
 		result = prime * result + ((costInfo == null) ? 0 : costInfo.hashCode());
 		result = prime * result + ((crcyCode == null) ? 0 : crcyCode.hashCode());
 		result = prime * result + ((exchange == null) ? 0 : exchange.hashCode());
-		result = prime * result + ((isinType == null) ? 0 : isinType.hashCode());
+		result = prime * result + ((isinInfo == null) ? 0 : isinInfo.hashCode());
 		temp = Double.doubleToLongBits(qty);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
@@ -205,10 +206,10 @@ public class TradeBook {
 				return false;
 		} else if (!exchange.equals(other.exchange))
 			return false;
-		if (isinType == null) {
-			if (other.isinType != null)
+		if (isinInfo == null) {
+			if (other.isinInfo != null)
 				return false;
-		} else if (!isinType.equals(other.isinType))
+		} else if (!isinInfo.equals(other.isinInfo))
 			return false;
 		if (Double.doubleToLongBits(qty) != Double.doubleToLongBits(other.qty))
 			return false;
@@ -236,7 +237,7 @@ public class TradeBook {
 	}
 	@Override
 	public String toString() {
-		return "TradeBook [isinType=" + isinType + ", costInfo=" + costInfo + ", accNo=" + accNo + ", accName="
+		return "TradeBook [isinInfo=" + isinInfo + ", costInfo=" + costInfo + ", accNo=" + accNo + ", accName="
 				+ accName + ", transDate=" + transDate + ", transType=" + transType + ", changeAmt=" + changeAmt
 				+ ", changeQty=" + changeQty + ", qty=" + qty + ", amt=" + amt + ", exchange=" + exchange
 				+ ", crcyCode=" + crcyCode + ", subject=" + subject + ", summary=" + summary + "]";

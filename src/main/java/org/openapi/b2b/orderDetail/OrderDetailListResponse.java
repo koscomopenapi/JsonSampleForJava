@@ -6,7 +6,7 @@ import org.openapi.b2b.common.Resp;
 public class OrderDetailListResponse {
 
 	private CommonHeaderForResponse commonHeader = new CommonHeaderForResponse();
-	private OrderDetailListResponseBody orderDetailResponseBody = new OrderDetailListResponseBody();
+	private OrderDetailListResponseBody orderDetailListResponseBody = new OrderDetailListResponseBody();
 	private OrderDetailList orderDetailList = new OrderDetailList();
 	private Resp resp = new Resp();
 	public OrderDetailListResponse() {
@@ -14,10 +14,10 @@ public class OrderDetailListResponse {
 		// TODO Auto-generated constructor stub
 	}
 	public OrderDetailListResponse(CommonHeaderForResponse commonHeader,
-			OrderDetailListResponseBody orderDetailResponseBody, OrderDetailList orderDetailList, Resp resp) {
+			OrderDetailListResponseBody orderDetailListResponseBody, OrderDetailList orderDetailList, Resp resp) {
 		super();
 		this.commonHeader = commonHeader;
-		this.orderDetailResponseBody = orderDetailResponseBody;
+		this.orderDetailListResponseBody = orderDetailListResponseBody;
 		this.orderDetailList = orderDetailList;
 		this.resp = resp;
 	}
@@ -27,11 +27,11 @@ public class OrderDetailListResponse {
 	public void setCommonHeader(CommonHeaderForResponse commonHeader) {
 		this.commonHeader = commonHeader;
 	}
-	public OrderDetailListResponseBody getOrderDetailResponseBody() {
-		return orderDetailResponseBody;
+	public OrderDetailListResponseBody getorderDetailListResponseBody() {
+		return orderDetailListResponseBody;
 	}
-	public void setOrderDetailResponseBody(OrderDetailListResponseBody orderDetailResponseBody) {
-		this.orderDetailResponseBody = orderDetailResponseBody;
+	public void setorderDetailListResponseBody(OrderDetailListResponseBody orderDetailListResponseBody) {
+		this.orderDetailListResponseBody = orderDetailListResponseBody;
 	}
 	public OrderDetailList getOrderDetailList() {
 		return orderDetailList;
@@ -51,7 +51,7 @@ public class OrderDetailListResponse {
 		int result = 1;
 		result = prime * result + ((commonHeader == null) ? 0 : commonHeader.hashCode());
 		result = prime * result + ((orderDetailList == null) ? 0 : orderDetailList.hashCode());
-		result = prime * result + ((orderDetailResponseBody == null) ? 0 : orderDetailResponseBody.hashCode());
+		result = prime * result + ((orderDetailListResponseBody == null) ? 0 : orderDetailListResponseBody.hashCode());
 		result = prime * result + ((resp == null) ? 0 : resp.hashCode());
 		return result;
 	}
@@ -74,10 +74,10 @@ public class OrderDetailListResponse {
 				return false;
 		} else if (!orderDetailList.equals(other.orderDetailList))
 			return false;
-		if (orderDetailResponseBody == null) {
-			if (other.orderDetailResponseBody != null)
+		if (orderDetailListResponseBody == null) {
+			if (other.orderDetailListResponseBody != null)
 				return false;
-		} else if (!orderDetailResponseBody.equals(other.orderDetailResponseBody))
+		} else if (!orderDetailListResponseBody.equals(other.orderDetailListResponseBody))
 			return false;
 		if (resp == null) {
 			if (other.resp != null)
@@ -88,8 +88,8 @@ public class OrderDetailListResponse {
 	}
 	@Override
 	public String toString() {
-		return "OrderDetailListResponse [commonHeader=" + commonHeader + ", orderDetailResponseBody="
-				+ orderDetailResponseBody + ", orderDetailList=" + orderDetailList + ", resp=" + resp + "]";
+		return "OrderDetailListResponse [commonHeader=" + commonHeader + ", orderDetailListResponseBody="
+				+ orderDetailListResponseBody + ", orderDetailList=" + orderDetailList + ", resp=" + resp + "]";
 	}
 	
 	

@@ -7,17 +7,17 @@ public class OrderDetailListRequest {
 
 	private Partner partner;
 	private CommonHeaderForRequest commonHeader;
-	private OrderDetailListRequestBody orderDetailRequestBody;
+	private OrderDetailListRequestBody orderDetailListRequestBody;
 	public OrderDetailListRequest() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public OrderDetailListRequest(Partner partner, CommonHeaderForRequest commonHeader,
-			OrderDetailListRequestBody orderDetailRequestBody) {
+			OrderDetailListRequestBody orderDetailListRequestBody) {
 		super();
 		this.partner = partner;
 		this.commonHeader = commonHeader;
-		this.orderDetailRequestBody = orderDetailRequestBody;
+		this.orderDetailListRequestBody = orderDetailListRequestBody;
 	}
 	public Partner getPartner() {
 		return partner;
@@ -31,18 +31,18 @@ public class OrderDetailListRequest {
 	public void setCommonHeader(CommonHeaderForRequest commonHeader) {
 		this.commonHeader = commonHeader;
 	}
-	public OrderDetailListRequestBody getOrderDetailRequestBody() {
-		return orderDetailRequestBody;
+	public OrderDetailListRequestBody getorderDetailListRequestBody() {
+		return orderDetailListRequestBody;
 	}
-	public void setOrderDetailRequestBody(OrderDetailListRequestBody orderDetailRequestBody) {
-		this.orderDetailRequestBody = orderDetailRequestBody;
+	public void setorderDetailListRequestBody(OrderDetailListRequestBody orderDetailListRequestBody) {
+		this.orderDetailListRequestBody = orderDetailListRequestBody;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((commonHeader == null) ? 0 : commonHeader.hashCode());
-		result = prime * result + ((orderDetailRequestBody == null) ? 0 : orderDetailRequestBody.hashCode());
+		result = prime * result + ((orderDetailListRequestBody == null) ? 0 : orderDetailListRequestBody.hashCode());
 		result = prime * result + ((partner == null) ? 0 : partner.hashCode());
 		return result;
 	}
@@ -60,10 +60,10 @@ public class OrderDetailListRequest {
 				return false;
 		} else if (!commonHeader.equals(other.commonHeader))
 			return false;
-		if (orderDetailRequestBody == null) {
-			if (other.orderDetailRequestBody != null)
+		if (orderDetailListRequestBody == null) {
+			if (other.orderDetailListRequestBody != null)
 				return false;
-		} else if (!orderDetailRequestBody.equals(other.orderDetailRequestBody))
+		} else if (!orderDetailListRequestBody.equals(other.orderDetailListRequestBody))
 			return false;
 		if (partner == null) {
 			if (other.partner != null)
@@ -75,7 +75,7 @@ public class OrderDetailListRequest {
 	@Override
 	public String toString() {
 		return "OrderDetailListRequest [partner=" + partner + ", commonHeader=" + commonHeader
-				+ ", orderDetailRequestBody=" + orderDetailRequestBody + "]";
+				+ ", orderDetailListRequestBody=" + orderDetailListRequestBody + "]";
 	}
 
 	

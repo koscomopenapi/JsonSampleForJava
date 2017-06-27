@@ -3,7 +3,7 @@ package org.openapi.b2b.test;
 import org.openapi.b2b.balanceList.AccInfo;
 import org.openapi.b2b.balanceList.Balance;
 import org.openapi.b2b.balanceList.BalanceList;
-import org.openapi.b2b.balanceList.BalanceListRequestBody;
+import org.openapi.b2b.balanceList.BalanceListResponse;
 import org.openapi.b2b.balanceList.BalanceListResponseBody;
 import org.openapi.b2b.balanceList.CashBalInfo;
 import org.openapi.b2b.balanceList.QueryParameter;
@@ -12,6 +12,8 @@ import org.openapi.b2b.common.CommonHeaderForResponse;
 import org.openapi.b2b.common.IsinInfo;
 import org.openapi.b2b.common.QueryResult;
 import org.openapi.b2b.common.Resp;
+
+import com.google.gson.Gson;
 
 public class BalanceListResp {
 
@@ -90,11 +92,21 @@ public class BalanceListResp {
 		balance.addCashBalInfo(cashBalInfo);
 		balance.addSecuritiesBalInfo(securitiesBalInfo);
 		
+		balanceList.addBalance(balance);
+		
 		Resp resp = new Resp();
 		resp.setRespCode("200");
 		resp.setRespMsg("OK");
 		
+		BalanceListResponse balanceListResponse = new BalanceListResponse();
+		balanceListResponse.setCommonHeader(commonHeader);
+		balanceListResponse.setBalanceListResponseBody(balanceListResponseBody);
+		balanceListResponse.setBalanceList(balanceList);
+		balanceListResponse.setResp(resp);
 		
+		Gson gson = new Gson(); 
+		String request = gson.toJson(balanceListResponse);
+		System.out.println(request);
 		
 		
 	}
